@@ -68,7 +68,7 @@ const person = (path === '/' || path === '/about/') && {
     <slot />
   </main>
   <footer class="band">
-    <span>© {new Date().getFullYear()} {SITE.name}</span>
+    <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
     <span class="links">
       {SITE.email && <a href={`mailto:${SITE.email}`}>Email</a>}
       {SITE.linkedin && <a href={SITE.linkedin}>LinkedIn</a>}

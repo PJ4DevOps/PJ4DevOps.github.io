@@ -17,6 +17,23 @@ const photos = await Promise.all(Object.entries(files).map(async ([file, mod]) =
            group: tag?.group ?? 'untagged:' + id, subject: tag?.subject ?? id, note: tag?.note ?? '' };
 }));
 const data = { photos, first: gallery.first ?? [] };
+
+// Tells search engines (Google Images in particular) who made and owns each photo.
+const site = Astro.site!;
+const notice = '© Pat Johnson. All rights reserved.';
+const imageLd = {
+  '@context': 'https://schema.org',
+  '@graph': photos.map(p => ({
+    '@type': 'ImageObject',
+    contentUrl: new URL(p.large, site).href,
+    name: p.note || undefined,
+    creator: { '@type': 'Person', name: 'Pat Johnson' },
+    copyrightHolder: { '@type': 'Person', name: 'Pat Johnson' },
+    copyrightNotice: notice,
+    creditText: 'Pat Johnson',
+    acquireLicensePage: new URL('/about/', site).href,
+  })),
+};
 ---
 <Base title="Photos" description="Photographs by Pat Johnson: flowers, food, dogs, scenes, and the occasional pollinator.">
   <section class="intro wrap">
@@ -35,6 +52,8 @@ const data = { photos, first: gallery.first ?? [] };
     </noscript>
   </div>
 
+  <p class="rights meta wrap">All photographs © 2012–2026 Pat Johnson. All rights reserved. If you'd like to use one, please <a href="/about/">get in touch</a>.</p>
+
   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
     <img id="lb-img" alt="" />
     <button class="ctl close" id="lb-close" aria-label="Close">✕</button>
@@ -43,6 +62,7 @@ const data = { photos, first: gallery.first ?? [] };
     <div class="count" id="lb-count"></div>
   </div>
 
+  <script type="application/ld+json" set:html={JSON.stringify(imageLd)} />
   <script type="application/json" id="gallery-data" set:html={JSON.stringify(data)} />
 </Base>
 
@@ -130,7 +150,7 @@ const data = { photos, first: gallery.first ?? [] };
     cur = (i + photos.length) % photos.length;
     img.src = photos[cur].large;
     img.alt = photos[cur].note;
-    count.textContent = pad(cur + 1) + ' / ' + pad(photos.length);
+    count.textContent = pad(cur + 1) + ' / ' + pad(photos.length) + '  ·  © Pat Johnson';
     new Image().src = photos[(cur + 1) % photos.length].large;
   }
   function open(i: number) {
@@ -175,6 +195,9 @@ const data = { photos, first: gallery.first ?? [] };
   .collage button:hover img { transform: scale(1.03); }
   .collage button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+  .rights { margin-top: 24px; }
+  .rights a { color: var(--accent); }
+
   .lb { position: fixed; inset: 0; background: var(--band);  /* Barren Plain, like the header and footer */ display: none;
         align-items: center; justify-content: center; z-index: 10; }
   .lb.open { display: flex; }
@@ -187,6 +210,6 @@ const data = { photos, first: gallery.first ?? [] };
   .lb .prev { left: 6px; top: 50%; transform: translateY(-50%); }
   .lb .next { right: 6px; top: 50%; transform: translateY(-50%); }
   .lb .count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center;
-               color: var(--muted); font: 400 14px/1 var(--small); letter-spacing: .08em; }
+               color: var(--muted); font: 400 14px/1 var(--small); letter-spacing: .08em; white-space: pre; }
   @media (max-width: 600px) { .lb .prev, .lb .next { display: none; } }
 </style>
