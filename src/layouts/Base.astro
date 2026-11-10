@@ -10,7 +10,9 @@ interface Props {
   image?: string;
 }
 const { title, description = SITE.description, canonical, image } = Astro.props;
-const fullTitle = title ? `${title} — ${SITE.name}` : SITE.name;
+// Browser tab and link-preview title; the header still shows just the name.
+const siteTitle = `${SITE.name} Portfolio`;
+const fullTitle = title ? `${title} — ${siteTitle}` : siteTitle;
 const path = Astro.url.pathname;
 const canonicalUrl = canonical ?? (Astro.site ? new URL(path, Astro.site).href : undefined);
 const site = Astro.site ?? Astro.url;
@@ -43,7 +45,7 @@ const person = (path === '/' || path === '/about/') && {
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:site_name" content={siteTitle} />
   {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
   <meta property="og:image" content={ogImage} />
   {!image && <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>}
