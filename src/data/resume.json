@@ -4,12 +4,8 @@
   "headline": "Product and Content Marketing",
   "location": "Austin, Texas",
   "linkedin": "https://www.linkedin.com/in/allaboutpat/",
-  "summary": "I help B2B technology companies turn complex products into clear stories that buyers understand and sales teams can use. As a product marketing leader in global high-tech companies and start-ups, I've worked at every stage, from positioning a new product to launching it and supporting the pipeline behind it.",
+  "summary": "I make complex B2B technology easier for buyers to understand and sales teams to sell. As a product marketing leader at global enterprises and start-ups, I own the entire path, from go-to-market strategy and positioning through launch, adoption, and pipeline growth.",
   "focus": [
-    {
-      "label": "Marketing strategy",
-      "text": "Build plans tied to business goals, including go-to-market for new product introductions."
-    },
     {
       "label": "Product marketing",
       "text": "Lead launches, positioning, and messaging, and equip sales with the enablement and demand support to win."
@@ -17,6 +13,10 @@
     {
       "label": "Content marketing",
       "text": "Set content strategy and standards, write and edit across formats (blogs, white papers, email, web), and use AI to speed up content development, audits, and analysis."
+    },
+    {
+      "label": "AI, hands-on",
+      "text": "I built patriciajohnson.me with Claude Code, from first sketch to live domain: design, copy, photo privacy, and launch."
     },
     {
       "label": "Technology areas",
