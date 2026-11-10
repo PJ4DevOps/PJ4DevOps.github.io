@@ -13,7 +13,7 @@ The rest of the site content came from my writing samples from Moderne and my pr
 
 ![A dirt road leading into golden hills under a blue sky](./images/hills-photo.jpg) ![The same scene traced as brick-colored contour lines](./images/hills-outline.svg)
 
-We brainstormed title and copy, focusing on purpose-built stories, which is the heart of what I do.
+We brainstormed title and copy, landing on purpose-built stories, which is the heart of what I do.
 
 I did some copy editing as we went along, honing headlines and text. Confession: I'm an iterator. I added the alliterative "books, briefs, and blogs." Claude suggested "light"; I chose "focus," which keeps the connection to both writing and photos. That's the beauty of partnering with AI. I can continue to improve and hone as time and tokens permit. I can add or remove pictures, and Claude can do the updates in seconds.
 
@@ -37,6 +37,6 @@ Not counting my prep time to collate the content for the site, but including the
 
 I've worked with coding agents from Claude and OpenAI for more than a year, and I've built web pages with Claude before. What was different this time was the whole arc: from a paint color on my walls to a live site with its own domain, in less than a working day. I'm not a programmer, but Claude has enabled me to be a builder. It brings good ideas to the table and covers the back end, which is a skill unto itself.
 
-And here's what Claude had to say:
+And here's what Claude had to say about the site:
 
 > A calm, personal portfolio that pairs real expertise with a real eye, and it's built well underneath. I wrote the code and drafted options; Pat made the calls that give it its character.
