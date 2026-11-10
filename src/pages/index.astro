@@ -19,7 +19,7 @@ const doors = [
     <div class="art" aria-hidden="true" set:html={outline} />
     <div class="wrap words">
       <div class="copy">
-        <h1>Every product has a <em>story</em>.<br /> I find it<span>.</span></h1>
+        <h1><span class="ph">Every product</span> <span class="ph">has a <em>story</em>.</span><br /> I find it<span class="dot">.</span></h1>
         <p>Some stories need a launch plan. Others just need the right <em>focus</em>.</p>
       </div>
     </div>
@@ -59,7 +59,9 @@ const doors = [
   .words { width: 100%; }
   .hero h1 { margin: 0; font-size: clamp(44px, 8.5vw, 136px); line-height: .95;
              font-variation-settings: "opsz" 144; letter-spacing: -0.035em; font-weight: 350; }
-  .hero h1 span { color: var(--accent); }
+  .hero h1 .dot { color: var(--accent); }
+  /* Keep each phrase whole: narrow screens break between "Every product" and "has a story". */
+  .hero h1 .ph { white-space: nowrap; }
   .hero p { margin: clamp(16px, 2vw, 28px) 0 0; font: 300 clamp(20px, 2.6vw, 34px)/1.25 var(--serif);
             color: var(--muted); letter-spacing: -0.01em; }
   .hero em { color: var(--accent); }
