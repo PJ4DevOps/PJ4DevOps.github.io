@@ -216,6 +216,11 @@
       "group": "food",
       "subject": "produce",
       "note": "olives and artichokes"
+    },
+    "img_5006": {
+      "group": "landscape",
+      "subject": "hills",
+      "note": "winter hills through a stone window"
     }
   },
   "sizes": [
@@ -373,6 +378,11 @@
       "id": "img_4989",
       "w": 2400,
       "h": 1800
+    },
+    {
+      "id": "img_5006",
+      "w": 1800,
+      "h": 2400
     },
     {
       "id": "img_5257",
