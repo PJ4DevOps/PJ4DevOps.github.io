@@ -9,7 +9,7 @@ I've used the Benjamin Moore color Barren Plain in most rooms in my house. Somet
 
 The photos were my other impulse: a collage of shots that make me happy and show something about how I see the world. I compiled a folder of photos I wanted to share, and Claude labeled and ordered them, then used the Photos page as the first draft of the actual site. We honed it: Claude removed location data from the photos, and I suggested we make sure the photo themes are not juxtaposed in the collage. I went with Claude's first draft of the page headline but edited the copy. Pollinator had to be in there.
 
-The rest of the site content came from my writing samples from Moderne and my profile on LinkedIn. Claude added lines and eyebrows. I requested their removal. Claude decided to include a print-ready résumé (brilliant!). The home page first draft was plain, so I suggested we take one of the photos and make it more abstract to use as a background in the hero. Claude tried outlining a number of the photos, and we landed on the road with hills photo, outlined in brick.
+The rest of the site content came from my writing samples from Moderne and my profile on LinkedIn. Claude added lines and eyebrows. I requested their removal. Claude decided to include a print-ready résumé (brilliant!). The home page first draft was plain, so I suggested we take one of the photos and make it more abstract to use as a background in the hero. Claude tried outlining a number of the photos, and we settled on the road with hills photo, outlined in brick.
 
 ![A dirt road leading into golden hills under a blue sky](./images/hills-photo.jpg) ![The same scene traced as brick-colored contour lines](./images/hills-outline.svg)
 
