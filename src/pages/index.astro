@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Base from '../layouts/Base.astro';
+// Contour-line art traced from the golden-hills photo (scripts/make-outline.mjs).
+import outline from '../assets/outline.svg?raw';
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.jpg', { eager: true });
+const photo = (id: string) => files[`../assets/photos/${id}.jpg`].default;
+
+const doors = [
+  { href: '/writing/', label: 'Writing', meta: 'Books, briefs, and blogs', img: photo('img_3305') },
+  { href: '/photos/', label: 'Photos', meta: 'Flowers, food, dogs, and scenes', img: photo('img_0608') },
+  { href: '/about/', label: 'About', meta: 'Résumé & contact', img: photo('img_6375') },
+];
+---
+<Base>
+  <section class="hero">
+    <div class="art" aria-hidden="true" set:html={outline} />
+    <div class="wrap words">
+      <div class="copy">
+        <h1>Every product has a <em>story</em>.<br /> I find it<span>.</span></h1>
+        <p>Some stories need a launch plan. Others just need good <em>light</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="doors wrap" aria-label="Sections">
+    {doors.map(d => (
+      <a href={d.href}>
+        <Image src={d.img} alt="" width={700} format="webp" quality={72} />
+        <span class="label">{d.label} <span class="arrow">→</span></span>
+        <span class="meta">{d.meta}</span>
+      </a>
+    ))}
+  </nav>
+</Base>
+
+<style>
+  /* Hero: the hills-and-road contour drawing (top quarter of the photo cropped)
+     fills the space; the name sits low over it on a soft, feathered wash of the
+     page color so it reads clearly against the lines. */
+  .hero { position: relative; overflow: hidden; isolation: isolate;
+          min-height: clamp(460px, 72vh, 780px); display: flex; align-items: flex-end;
+          padding-block: 48px clamp(32px, 5vw, 64px); }
+  .art { position: absolute; inset: 0 -10%; z-index: -1; color: var(--outline); }
+  @media (max-width: 720px) {
+    /* Narrow screens: shorter hero, and a wider box so the drawing scales up to fill it. */
+    .hero { min-height: 420px; }
+    .art { inset: 0 -45% 18%; }
+  }
+  .copy { position: relative; width: fit-content; max-width: 100%; }
+  .copy::before { content: ""; position: absolute; inset: -12% -8% -18% -6%; z-index: -1;
+                  background: var(--bg); opacity: .86; filter: blur(28px); border-radius: 40%; }
+  .art :global(svg) { width: 100%; height: 100%; display: block;
+                      animation: drift 60s ease-in-out infinite alternate; transform-origin: 50% 60%; }
+  @keyframes drift { from { transform: scale(1.04) translate(0, 0); } to { transform: scale(1.1) translate(-1.5%, 1%); } }
+  @media (prefers-reduced-motion: reduce) { .art :global(svg) { animation: none; } }
+  .words { width: 100%; }
+  .hero h1 { margin: 0; font-size: clamp(44px, 8.5vw, 136px); line-height: .95;
+             font-variation-settings: "opsz" 144; letter-spacing: -0.035em; font-weight: 350; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { margin: clamp(16px, 2vw, 28px) 0 0; font: 300 clamp(20px, 2.6vw, 34px)/1.25 var(--serif);
+            color: var(--muted); letter-spacing: -0.01em; }
+  .hero em { color: var(--accent); }
+
+  /* The tiles share rows (space, heading, description) through subgrid, so the
+     headings line up even when one description wraps to two lines. */
+  .doors { display: grid; grid-template-columns: repeat(3, 1fr);
+           grid-template-rows: minmax(clamp(120px, 15vw, 220px), 1fr) auto auto; column-gap: 10px; }
+  .doors a { position: relative; grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 0;
+             padding: 24px; overflow: hidden; border-radius: 3px;
+             text-decoration: none; color: #f4f2ec; isolation: isolate; }
+  .doors .label { grid-row: 2; }
+  .doors .meta { grid-row: 3; align-self: start; }
+  @media (max-width: 720px) {
+    .doors { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 10px; }
+    .doors a { grid-row: auto; display: flex; flex-direction: column; justify-content: flex-end; min-height: 200px; }
+  }
+  .doors img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+               transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .doors a::after { content: ""; position: absolute; inset: 0; z-index: -1;
+                    background: linear-gradient(to top, rgb(28 25 22 / .82), rgb(28 25 22 / .15) 70%); }
+  .doors a:hover img { transform: scale(1.05); }
+  .doors .label { font: 400 clamp(32px, 3.6vw, 52px)/1 var(--serif); letter-spacing: -0.02em; }
+  .doors .arrow { display: inline-block; transition: transform .3s; }
+  .doors a:hover .arrow { transform: translateX(6px); }
+  .doors .meta { color: #ddd8ce; margin-top: 8px; }
+</style>

@@ -1,0 +1,103 @@
+[
+  {
+    "kind": "book",
+    "title": "Code as Data",
+    "subtitle": "Governing and Evolving Large-Scale Codebases in the Era of AI",
+    "authors": [
+      "Bryan Friedman",
+      "Pat Johnson",
+      "Olga Kundzich"
+    ],
+    "publisher": "O'Reilly Media",
+    "date": "2026-08",
+    "edition": "First Edition",
+    "pages": 44,
+    "cover": "code-as-data-cover.png",
+    "pdf": "code-as-data.pdf",
+    "context": "High-performing, long-form asset that speaks to agentic coding challenges. Built to drive lead generation and brand credibility.",
+    "links": [
+      {
+        "label": "O'Reilly",
+        "url": "https://www.oreilly.com/library/view/code-as-data/0642572333225/"
+      },
+      {
+        "label": "Free download from Moderne",
+        "url": "https://moderne.ai/ebook/code-as-data-oreilly"
+      }
+    ],
+    "hostPdf": true
+  },
+  {
+    "kind": "book",
+    "title": "Automated Code Remediation at Scale",
+    "subtitle": "The Role of AI in Application Modernization and Security",
+    "authors": [
+      "Pat Johnson",
+      "Olga Kundzich",
+      "Jonathan Schneider"
+    ],
+    "publisher": "O'Reilly Media",
+    "date": "2025-05",
+    "edition": "Second Edition (first edition May 2023)",
+    "pages": 51,
+    "cover": "automated-code-remediation-cover.png",
+    "pdf": "automated-code-remediation-at-scale-2e.pdf",
+    "context": "High-performing, long-form asset introducing a new category. Built to drive lead generation and brand credibility.",
+    "links": [
+      {
+        "label": "O'Reilly",
+        "url": "https://www.oreilly.com/library/view/automated-code-remediation/9798341627635/"
+      }
+    ],
+    "hostPdf": true
+  },
+  {
+    "kind": "book",
+    "title": "The Practical Agentic Coding Playbook",
+    "subtitle": "Getting from Mandate to Measurable Results",
+    "authors": [
+      "Pat Johnson"
+    ],
+    "publisher": "Moderne",
+    "date": "2026",
+    "edition": "E-book",
+    "pages": 14,
+    "cover": "agentic-coding-playbook-cover.png",
+    "pdf": "agentic-coding-playbook.pdf",
+    "context": "Performed well as part of a retargeting campaign to capture top-of-funnel interest.",
+    "links": [],
+    "hostPdf": true
+  },
+  {
+    "kind": "brief",
+    "title": "Moderne Platform Editions",
+    "subtitle": "Deterministic change across thousands of repositories",
+    "authors": [
+      "Pat Johnson"
+    ],
+    "publisher": "Moderne",
+    "date": "2026",
+    "edition": "Product brief",
+    "pages": 2,
+    "cover": "moderne-platform-editions-brief-cover.png",
+    "pdf": "moderne-platform-editions-brief.pdf",
+    "links": [],
+    "hostPdf": true
+  },
+  {
+    "kind": "brief",
+    "title": "Moderne Prethink for the Mainframe",
+    "subtitle": "Accelerate mainframe modernization with deterministic agent context",
+    "authors": [
+      "Pat Johnson"
+    ],
+    "publisher": "Moderne",
+    "date": "2026",
+    "edition": "Product brief",
+    "pages": 2,
+    "cover": "prethink-mainframe-brief-cover.png",
+    "pdf": "prethink-mainframe-brief.pdf",
+    "links": [],
+    "hostPdf": true
+  }
+]

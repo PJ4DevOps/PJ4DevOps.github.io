@@ -1,0 +1,206 @@
+{
+  "_about": "Résumé content for the About page, taken from Pat's LinkedIn profile export (Profile.pdf, 2026-11-09). Edit here, then run `npm run import` in site/.",
+  "name": "Patricia Johnson",
+  "headline": "Product and Content Marketing",
+  "location": "Austin, Texas",
+  "linkedin": "https://www.linkedin.com/in/allaboutpat/",
+  "summary": "I help B2B technology companies turn complex products into clear stories that buyers understand and sales teams can use. As a product marketing leader in global high-tech companies and start-ups, I've worked at every stage, from positioning a new product to launching it and supporting the pipeline behind it.",
+  "focus": [
+    {
+      "label": "Marketing strategy",
+      "text": "Build plans tied to business goals, including go-to-market for new product introductions."
+    },
+    {
+      "label": "Product marketing",
+      "text": "Lead launches, positioning, and messaging, and equip sales with the enablement and demand support to win."
+    },
+    {
+      "label": "Content marketing",
+      "text": "Set content strategy and standards, write and edit across formats (blogs, white papers, email, web), and use AI to speed up content development, audits, and analysis."
+    },
+    {
+      "label": "Technology areas",
+      "text": "AI and coding agents, developer tools, cloud platforms, continuous delivery, security, networking, semiconductors."
+    }
+  ],
+  "skills": [
+    "Artificial Intelligence (AI)",
+    "Product marketing",
+    "Content marketing"
+  ],
+  "certifications": [
+    "AI Fluency: Framework & Foundations (certificate of completion)"
+  ],
+  "experience": [
+    {
+      "company": "Moderne, Inc.",
+      "roles": [
+        {
+          "title": "Director of Product Marketing",
+          "start": "2022-10",
+          "end": "2026-09",
+          "description": "I joined Moderne as the first marketer when mass-scale code refactoring and analysis was a category without a name. Working side by side with the founders, I helped turn deep technical vision into a story enterprise engineering leaders could understand and later supported the company's shift to an AI-focused offering. It was a fast-moving, all-hands effort, and my favorite part was always hearing a customer's excitement when they saw what Moderne could do.",
+          "highlights": [
+            "Started and ran the marketing function for 2.5 years (through Series B), growing the team to three and laying the foundation for the VP of Marketing hire",
+            "Led category creation, positioning, and messaging for Moderne and its B2B product line, evolving it as AI took over the industry's mindshare",
+            "Drove go-to-market for product launches end to end: defining the messaging, leading sales enablement, and delivering the supporting content",
+            "Created thought leadership and product content: monthly blogs, webinars, ebooks, three O'Reilly reports, case studies, product briefs, and customer decks",
+            "Managed analyst relations throughout, driving submissions for two Gartner Magic Quadrants that resulted in recognition as a Leader and a Visionary",
+            "Established the website's SEO and content foundation before handing off to a growing team",
+            "Used AI to keep pace with a fast-moving product and market, researching and synthesizing information across internal and external sources",
+            "Worked with AI as a partner in delivering content, from writing to design: honing its output with custom writing and brand skills to produce drafts, format one-pagers, and even build the occasional web page"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "VMware",
+      "roles": [
+        {
+          "title": "Senior Manager, Portfolio Product Marketing",
+          "start": "2021-07",
+          "end": "2022-08",
+          "description": "Managed a portfolio marketing team that drives portfolio-level marketing and enablement; content strategy and blog site management; and a super-user customer community.",
+          "highlights": [
+            "Executed a full brand refresh incorporating external quantitative and qualitative brand research, analyst outreach, internal stakeholder interviews, and messaging feedback sessions, culminating in a new messaging framework",
+            "Trained internal teams (sales, new hires, partners) on the Tanzu portfolio and the why of modern applications",
+            "Wrote and produced a 25-minute virtual solution keynote for VMworld 2021 featuring the business GM/SVP: DevSecOps Your Way to Any Cloud (And Delight Customers)"
+          ]
+        },
+        {
+          "title": "Senior Product Marketing Manager",
+          "start": "2020-01",
+          "end": "2021-07",
+          "description": "Supported portfolio-level marketing with the customer-facing Tanzu portfolio introduction deck for sales, a how-to-sell deck, and external portfolio content and web content.",
+          "highlights": [
+            "Launched VMware Tanzu Advanced edition, a solution bundle of 10 Tanzu products: created the messaging, pitch presentation, webinar, solution brief, and video script, plus sales enablement such as how-to-sell training and a sales cheat sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Pivotal Software, Inc.",
+      "note": "acquired by VMware",
+      "roles": [
+        {
+          "title": "CI/CD Product Marketing Lead",
+          "start": "2018-09",
+          "end": "2020-01",
+          "location": "Austin, Texas",
+          "description": "Drove product marketing for Concourse, an open-source, container-native continuous integration and continuous delivery (CI/CD) automation platform."
+        }
+      ]
+    },
+    {
+      "company": "CA Technologies",
+      "roles": [
+        {
+          "title": "Product Marketing Manager",
+          "start": "2015-05",
+          "end": "2018-09",
+          "location": "Austin, Texas",
+          "description": "As a member of the DevOps product marketing team, drove continuous delivery product and solutions marketing for large enterprise customers. Established and executed the product vision with product management, demand and field marketing, and sales across regions, covering personas, messaging and positioning, buyer journeys, content strategy, sales enablement, digital demand programs, and product launches.",
+          "highlights": [
+            "Led marketing for a continuous delivery SaaS product, including managing its website",
+            "Developed content for the buyer journey, demand programs, events, and sales prospecting: ebooks, blogs, presentations, video scripts, data sheets, infographics, executive briefs, ROI tools, emails, and web copy",
+            "Cultivated customer relationships to produce success stories, presentations, and user reviews",
+            "Drove social media promotion through LinkedIn and Twitter",
+            "Executed sales education and enablement, such as customer presentations, competitive battlecards, and sales plays"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Marketing Consultancy",
+      "roles": [
+        {
+          "title": "Content, Digital, and Demand Marketer",
+          "start": "2014-06",
+          "end": "2015-06",
+          "location": "Austin, Texas",
+          "description": "Marketing consultant for high-tech companies from start-ups to large enterprises: strategic planning, messaging and positioning, personas, content marketing, demand generation, social and search marketing, and executive communications. Projects included a software developer persona for a semiconductor company, a nurture campaign for a video management company, segment-based content audits for a mobile workspace company, and blog and web content for cloud security and B2B demand generation companies."
+        }
+      ]
+    },
+    {
+      "company": "Freescale Semiconductor",
+      "roles": [
+        {
+          "title": "Senior Manager, Global Integrated Marketing",
+          "start": "2009-12",
+          "end": "2014-01",
+          "description": "Built the corporate integrated marketing team from the ground up, managing a multi-million-dollar budget covering brand programs, advertising, social media, digital content, demand generation, email marketing, and search marketing.",
+          "highlights": [
+            "Led marketing planning and reporting for the company: a yearly, collaborative planning process across all businesses and monthly reporting and tuning of marketing performance",
+            "Drove marketing measurement beyond tactics to qualified lead generation and influence on revenue, doubling sales leads and design wins year over year",
+            "Directed the company's advertising function and strategy, growing CTR/CAR by 60% in 2013",
+            "Trained global marketing and sales organizations on modern marketing practices"
+          ]
+        },
+        {
+          "title": "Marketing Communications Manager",
+          "start": "2004-06",
+          "end": "2009-12",
+          "description": "Launched next-generation multicore networking processors, including branding, messaging, marketing content, and PR; created internal and external executive communications and presentations; managed the marketing communications team."
+        }
+      ]
+    },
+    {
+      "company": "Motorola Semiconductor",
+      "roles": [
+        {
+          "title": "Marketing Communications Manager",
+          "start": "2000-05",
+          "end": "2004-12",
+          "description": "Drove product launches and marketing content and programs for network processors and PowerPC (Power Architecture) processors. Developed new branding, messaging, and a consortium for PowerPC with IBM. Co-authored Chapter 14, \"Motorola C-5e Network Processor,\" in Network Processor Design: Issues and Practices, Volume 1 (2003)."
+        }
+      ]
+    },
+    {
+      "company": "C-Port Corporation",
+      "note": "acquired by Motorola",
+      "roles": [
+        {
+          "title": "Technical Publications and Marketing Communications Manager",
+          "start": "1998-07",
+          "end": "2000-05",
+          "description": "Launched the technical publications department for a network processor start-up and managed all marketing communications, including brand, collateral, events, and the website. Helped position the company's value ahead of its $430M acquisition by Motorola."
+        }
+      ]
+    },
+    {
+      "company": "3Com Corporation",
+      "roles": [
+        {
+          "title": "Technical Publications Manager",
+          "start": "1994-09",
+          "end": "1998-07",
+          "description": "Managed software documentation, including online help and web-based documentation."
+        }
+      ]
+    },
+    {
+      "company": "Synernetics",
+      "note": "acquired by 3Com",
+      "roles": [
+        {
+          "title": "Senior Technical Writer",
+          "start": "1990-06",
+          "end": "1994-09"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Northeastern University",
+      "degree": "Master's, Technical and Professional Writing",
+      "years": "1988 – 1990"
+    },
+    {
+      "school": "North Carolina State University",
+      "degree": "Bachelor's, English Education and Writing",
+      "years": "1983 – 1987"
+    }
+  ]
+}

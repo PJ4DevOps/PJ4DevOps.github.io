@@ -1,0 +1,65 @@
+/* Benjamin Moore neutrals plus one accent (see ../../design/aesthetic.md):
+   Chantilly Lace OC-65 (page), Barren Plain 2111-60 (bands, tiles),
+   Eagle Rock 1469 (lines; darkened for text), brick accent from the photos. */
+:root {
+  --bg: #f4f6f1; --band: #d3d0c9; --line: #8b847c;
+  --ink: #36302b; --muted: #5a534d; --accent: #9a3622;
+  --outline: #d06a3c;  /* decorative line art only, never text */
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Instrument Sans", -apple-system, "Helvetica Neue", sans-serif;
+  --small: "Alegreya Sans", var(--sans);  /* labels, dates, captions, footer */
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;  /* code in articles only */
+  --wide: 1600px; --text: 720px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1c1a18; --band: #26231f; --line: #5e5852;
+          --ink: #ece9e1; --muted: #aaa39a; --accent: #e08a68; --outline: #c8673f; }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+       font: 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased;
+       min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+img { max-width: 100%; height: auto; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; }
+h1 em, h2 em { font-style: italic; color: var(--accent); }
+
+/* Layout helpers */
+.wrap { max-width: var(--wide); margin: 0 auto; padding-inline: 16px; }
+.band { background: var(--band); padding-inline: max(16px, calc((100% - var(--wide) + 32px) / 2)); }
+.eyebrow { font: 500 13px/1 var(--small); letter-spacing: .1em; text-transform: uppercase;
+           color: var(--muted); margin: 0 0 14px; }
+.meta { font: 400 15px/1.6 var(--small); color: var(--muted); letter-spacing: .01em; }
+
+/* Page intro */
+.intro { padding-block: 56px 36px; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+         gap: 24px; align-items: end; }
+.intro h1 { margin: 0; font-size: clamp(40px, 7vw, 88px); line-height: .95;
+            font-variation-settings: "opsz" 144; letter-spacing: -0.025em; }
+.intro .lede { margin: 18px 0 0; max-width: 52ch; color: var(--muted); font-size: 18px; }
+.intro .meta { text-align: right; }
+@media (max-width: 640px) {
+  .intro { grid-template-columns: 1fr; padding-top: 32px; }
+  .intro .meta { text-align: left; }
+}
+
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+                border-top: 1px solid var(--line); padding-top: 18px; margin: 64px 0 24px; }
+.section-head h2 { margin: 0; font-size: clamp(26px, 3vw, 34px); }
+.section-head a { font-size: 15px; white-space: nowrap; }
+
+/* Print: plain black on white, no site chrome. Used mainly for the résumé on /about/. */
+@media print {
+  :root { --bg: #fff; --band: #fff; --ink: #000; --muted: #333; --accent: #000; --line: #bbb; }
+  body { font-size: 10.5pt; line-height: 1.45; }
+  header.site, footer, .no-print { display: none !important; }
+  main a { text-decoration: none; }
+  .wrap { padding-inline: 0; }
+}

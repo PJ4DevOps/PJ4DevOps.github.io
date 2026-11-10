@@ -1,0 +1,433 @@
+{
+  "_about": "Subject tags for the photo collage. 'group' is the broad kind of thing; 'subject' is narrower. The collage keeps photos with the same group, and especially the same subject, from sitting next to each other. 'first' optionally pins the opening photos.",
+  "first": [
+    "img_0787",
+    "img_5746",
+    "img_3494",
+    "img_3237"
+  ],
+  "photos": {
+    "18eea78a-14c0-4a72-9b47-7a5a0829d311": {
+      "group": "animal",
+      "subject": "dog",
+      "note": "beagle on the beach"
+    },
+    "img_0528": {
+      "group": "flower",
+      "subject": "bloom",
+      "note": "flowering maple"
+    },
+    "img_0608": {
+      "group": "flower",
+      "subject": "bloom",
+      "note": "amaryllis"
+    },
+    "img_0622": {
+      "group": "flower",
+      "subject": "bloom",
+      "note": "tiger lily"
+    },
+    "img_0669": {
+      "group": "landscape",
+      "subject": "hills",
+      "note": "stone house on a hill"
+    },
+    "img_0787": {
+      "group": "flower",
+      "subject": "bloom",
+      "note": "hibiscus"
+    },
+    "img_0971": {
+      "group": "food",
+      "subject": "produce",
+      "note": "papaya and limes"
+    },
+    "img_1248": {
+      "group": "sky",
+      "subject": "night",
+      "note": "full moon"
+    },
+    "img_1717": {
+      "group": "landscape",
+      "subject": "rock",
+      "note": "granite dome in cloud"
+    },
+    "img_1881": {
+      "group": "flower",
+      "subject": "insect",
+      "note": "swallowtail on blossoms"
+    },
+    "img_1902": {
+      "group": "flower",
+      "subject": "insect",
+      "note": "bee in white hibiscus"
+    },
+    "img_1905": {
+      "group": "food",
+      "subject": "drink",
+      "note": "old fashioned with bacon"
+    },
+    "img_1910": {
+      "group": "sky",
+      "subject": "storm",
+      "note": "rain cell over the beach"
+    },
+    "img_1956": {
+      "group": "animal",
+      "subject": "dog",
+      "note": "dog looking out to sea"
+    },
+    "img_2069": {
+      "group": "landscape",
+      "subject": "branches",
+      "note": "thorny branches, blue sky"
+    },
+    "img_2239": {
+      "group": "food",
+      "subject": "cooked",
+      "note": "skillet bake"
+    },
+    "img_2357": {
+      "group": "detail",
+      "subject": "leaf",
+      "note": "maple leaf in a web"
+    },
+    "img_2426": {
+      "group": "detail",
+      "subject": "insect",
+      "note": "caterpillar"
+    },
+    "img_2472": {
+      "group": "food",
+      "subject": "drink",
+      "note": "latte"
+    },
+    "img_2522": {
+      "group": "flower",
+      "subject": "insect",
+      "note": "bumblebee on a trumpet flower"
+    },
+    "img_2667": {
+      "group": "food",
+      "subject": "baked",
+      "note": "tart with stars"
+    },
+    "img_2759": {
+      "group": "animal",
+      "subject": "cat",
+      "note": "tabby close-up"
+    },
+    "img_3109": {
+      "group": "food",
+      "subject": "produce",
+      "note": "caprese platter"
+    },
+    "img_3237": {
+      "group": "food",
+      "subject": "baked",
+      "note": "pastry and toy bunny"
+    },
+    "img_3305": {
+      "group": "detail",
+      "subject": "stone",
+      "note": "river stones, red leaf"
+    },
+    "img_3384": {
+      "group": "building",
+      "subject": "building",
+      "note": "low brick building"
+    },
+    "img_3408": {
+      "group": "flower",
+      "subject": "rose",
+      "note": "peach rose"
+    },
+    "img_3415": {
+      "group": "flower",
+      "subject": "rose",
+      "note": "rosebuds, conservatory"
+    },
+    "img_3494": {
+      "group": "landscape",
+      "subject": "hills",
+      "note": "road into golden hills"
+    },
+    "img_3674": {
+      "group": "food",
+      "subject": "baked",
+      "note": "berry trifle"
+    },
+    "img_4989": {
+      "group": "animal",
+      "subject": "cat",
+      "note": "black cat by the window"
+    },
+    "img_5257": {
+      "group": "detail",
+      "subject": "sand",
+      "note": "leaf in sand"
+    },
+    "img_5509": {
+      "group": "food",
+      "subject": "produce",
+      "note": "blood orange"
+    },
+    "img_5742": {
+      "group": "landscape",
+      "subject": "rock",
+      "note": "cliff and valley"
+    },
+    "img_5746": {
+      "group": "animal",
+      "subject": "dog",
+      "note": "dog in a boat, bridge"
+    },
+    "img_6375": {
+      "group": "landscape",
+      "subject": "fields",
+      "note": "barn in a field"
+    },
+    "img_6433": {
+      "group": "food",
+      "subject": "baked",
+      "note": "crumble"
+    },
+    "img_7272": {
+      "group": "water",
+      "subject": "boat",
+      "note": "rowboat at the dock"
+    },
+    "img_7285": {
+      "group": "sky",
+      "subject": "clouds",
+      "note": "clouds from above"
+    },
+    "img_7904": {
+      "group": "water",
+      "subject": "boat",
+      "note": "blue rowboat"
+    },
+    "img_8962": {
+      "group": "water",
+      "subject": "reflection",
+      "note": "still water reflection"
+    },
+    "img_9441": {
+      "group": "food",
+      "subject": "produce",
+      "note": "olives and artichokes"
+    }
+  },
+  "sizes": [
+    {
+      "id": "18eea78a-14c0-4a72-9b47-7a5a0829d311",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_0528",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_0608",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_0622",
+      "w": 2131,
+      "h": 2400
+    },
+    {
+      "id": "img_0669",
+      "w": 2199,
+      "h": 1537
+    },
+    {
+      "id": "img_0787",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_0971",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_1248",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_1717",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_1881",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_1902",
+      "w": 1900,
+      "h": 2400
+    },
+    {
+      "id": "img_1905",
+      "w": 1797,
+      "h": 2400
+    },
+    {
+      "id": "img_1910",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_1956",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_2069",
+      "w": 2400,
+      "h": 1793
+    },
+    {
+      "id": "img_2239",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_2357",
+      "w": 1813,
+      "h": 2400
+    },
+    {
+      "id": "img_2426",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_2472",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_2522",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_2667",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_2759",
+      "w": 1410,
+      "h": 1936
+    },
+    {
+      "id": "img_3109",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_3237",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_3305",
+      "w": 1793,
+      "h": 2400
+    },
+    {
+      "id": "img_3384",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_3408",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_3415",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_3494",
+      "w": 2400,
+      "h": 1793
+    },
+    {
+      "id": "img_3674",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_4989",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_5257",
+      "w": 2325,
+      "h": 2118
+    },
+    {
+      "id": "img_5509",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_5742",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_5746",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_6375",
+      "w": 2400,
+      "h": 1858
+    },
+    {
+      "id": "img_6433",
+      "w": 1800,
+      "h": 2400
+    },
+    {
+      "id": "img_7272",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_7285",
+      "w": 2400,
+      "h": 1713
+    },
+    {
+      "id": "img_7904",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_8962",
+      "w": 2400,
+      "h": 1800
+    },
+    {
+      "id": "img_9441",
+      "w": 1800,
+      "h": 2400
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import all from '../data/publications.json';
+
+interface Props { kind?: 'book' | 'brief' }
+const { kind } = Astro.props;
+const pubs = kind ? all.filter(p => p.kind === kind) : all;
+const covers = import.meta.glob<{ default: ImageMetadata }>('../assets/covers/*.png', { eager: true });
+const cover = (name: string) => covers[`../assets/covers/${name}`]?.default;
+const year = (d: string) => d.slice(0, 4);
+---
+<div class="pubs">
+  {pubs.map(p => (
+    <article class="pub">
+      {p.cover && cover(p.cover) && (
+        <a class="cover" target="_blank" rel="noopener" href={p.hostPdf ? `/pdfs/${p.pdf}` : p.links[0]?.url}>
+          <Image src={cover(p.cover)!} alt={`Cover of ${p.title}`} width={360} />
+        </a>
+      )}
+      <div>
+        <p class="eyebrow">{p.publisher} · {year(p.date)}</p>
+        <h3>{p.title}</h3>
+        <p class="sub">{p.subtitle}</p>
+        <p class="by">{[p.authors.join(', '), p.edition].filter(Boolean).join(' · ')}</p>
+        {'context' in p && p.context && <p class="context">{p.context}</p>}
+        <p class="actions">
+          {p.hostPdf && <a class="primary" target="_blank" rel="noopener" href={`/pdfs/${p.pdf}`}>Read the PDF <span class="meta">({p.pages} pp)</span></a>}
+          {p.links.map(l => <a href={l.url}>{l.label} ↗</a>)}
+        </p>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .pubs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 40px 48px; }
+  .pub { display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 480px) { .pub { grid-template-columns: 110px 1fr; gap: 16px; } }
+  .cover { display: block; box-shadow: 0 1px 2px #0002, 0 8px 24px #0001; transition: transform .3s; }
+  .cover:hover { transform: translateY(-3px); }
+  .cover img { display: block; width: 100%; height: auto; }
+  h3 { margin: 0 0 6px; font-size: 26px; }
+  .sub { margin: 0 0 10px; color: var(--muted); }
+  .by { margin: 0 0 14px; font-size: 15px; }
+  /* How the piece was used in marketing. */
+  .context { margin: 0 0 16px; padding-left: 12px; border-left: 2px solid var(--accent);
+             font: italic 400 17px/1.45 var(--serif); max-width: 46ch; }
+  .actions { margin: 0; display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+  .primary { font-weight: 600; }
+  .actions .meta { font-size: 12px; }
+</style>

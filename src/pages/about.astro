@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site';
+import resume from '../data/resume.json';
+
+const month = (ym: string) => {
+  const [y, m] = ym.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1)).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+};
+type Role = { start: string; end: string };
+const span = (roles: Role[]) => `${roles.at(-1)!.start.slice(0, 4)} – ${roles[0].end.slice(0, 4)}`;
+---
+<Base title="About" description={`${resume.name}: ${resume.headline}. ${resume.summary}`}>
+  <section class="intro wrap">
+    <div>
+      <h1>Hello, I'm <em>Pat</em>.</h1>
+      <!-- TODO: Pat is writing her own intro; this is her LinkedIn summary for now. -->
+      <p class="lede">{resume.summary}</p>
+      <p class="connect"><a href={resume.linkedin}>Connect on LinkedIn ↗</a></p>
+    </div>
+  </section>
+
+  <div class="wrap resume">
+    <section>
+      <div class="section-head"><h2>What I do</h2></div>
+      <dl class="focus">
+        {resume.focus.map(f => (
+          <div><dt>{f.label}</dt><dd>{f.text}</dd></div>
+        ))}
+      </dl>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Experience</h2>
+        <button class="print no-print" type="button" onclick="window.print()">Print or save as PDF</button>
+      </div>
+      <ol class="jobs">
+        {resume.experience.map(job => (
+          <li class="job">
+            <p class="when meta">{span(job.roles)}</p>
+            <div>
+              <h3>{job.company}{job.note && <span class="note"> ({job.note})</span>}</h3>
+              {job.roles.map((r: { title: string; start: string; end: string; location?: string; description?: string; highlights?: string[] }) => (
+                <div class="role">
+                  <p class="title">{r.title}</p>
+                  <p class="meta">{month(r.start)} – {month(r.end)}{r.location && <> · {r.location}</>}</p>
+                  {r.description && <p class="desc">{r.description}</p>}
+                  {r.highlights && <ul>{r.highlights.map(h => <li>{h}</li>)}</ul>}
+                </div>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="facts">
+      <div>
+        <div class="section-head"><h2>Education</h2></div>
+        {resume.education.map(e => (
+          <p><strong>{e.school}</strong><br />{e.degree}<br /><span class="meta">{e.years}</span></p>
+        ))}
+      </div>
+      <div>
+        <div class="section-head"><h2>Skills</h2></div>
+        <ul>{resume.skills.map(s => <li>{s}</li>)}</ul>
+      </div>
+      <div>
+        <div class="section-head"><h2>Certifications</h2></div>
+        <ul>{resume.certifications.map(c => <li>{c}</li>)}</ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="section-head"><h2>Get in touch</h2></div>
+      <p>
+        {SITE.email && <><a href={`mailto:${SITE.email}`}>{SITE.email}</a> · </>}
+        LinkedIn: <a href={resume.linkedin}>{resume.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>
+      </p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Browsers use the page title as the suggested file name when saving as PDF.
+  let saved = document.title;
+  addEventListener('beforeprint', () => { saved = document.title; document.title = 'Pat Johnson Resume'; });
+  addEventListener('afterprint', () => { document.title = saved; });
+</script>
+
+<style>
+  .connect { margin: 20px 0 0; font-size: 17px; }
+  /* Section headings keep their rule, except the closing "Get in touch". */
+  .contact .section-head { border-top: 0; padding-top: 0; }
+
+  .focus { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 28px 36px; margin: 0; }
+  .focus dt { font: 400 22px/1.2 var(--serif); margin-bottom: 8px; }
+  .focus dd { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .print { all: unset; cursor: pointer; font-size: 15px; color: var(--accent);
+           text-decoration: underline; text-underline-offset: 3px; }
+  .jobs { list-style: none; margin: 0; padding: 0; }
+  .job { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 26px 0; }
+  .job:first-child { padding-top: 0; }
+  @media (max-width: 640px) { .job { grid-template-columns: 1fr; gap: 4px; } }
+  .when { margin: 6px 0 0; }
+  .job h3 { margin: 0 0 6px; font-size: 26px; }
+  .job h3 .note { font: 400 14px var(--sans); color: var(--muted); letter-spacing: 0; }
+  .role + .role { margin-top: 22px; }
+  .role .title { margin: 0; font-weight: 600; }
+  .role .meta { margin: 2px 0 0; }
+  .role .desc { margin: 10px 0 0; max-width: 72ch; }
+  .role ul { margin: 10px 0 0; padding-left: 1.1em; max-width: 72ch; }
+  .role li { margin: 6px 0; }
+  .role li::marker { color: var(--accent); }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
+  @media (max-width: 800px) { .facts { grid-template-columns: 1fr; } }
+  .facts ul { margin: 0; padding-left: 1.1em; }
+  .facts p { margin: 0 0 16px; }
+
+  @media print {
+    .intro { padding: 0 0 12px; }
+    .intro h1 { font-size: 34pt; }
+    .lede { color: #000 !important; }
+    /* Flow continuously across pages; only keep a heading with the text after it. */
+    .section-head { margin: 18px 0 8px; break-after: avoid; }
+    .job { padding: 12px 0; grid-template-columns: 90px 1fr; }
+    .job h3, .role .title, .role .meta { break-after: avoid; }
+    .job h3 { font-size: 15pt; }
+    .contact .section-head { margin-top: 18px; }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Publications from '../../components/Publications.astro';
+import PostList from '../../components/PostList.astro';
+
+const posts = (await getCollection('writing')).sort((a, b) => +b.data.published - +a.data.published);
+---
+<Base title="Writing" description="Books, briefs and articles by Pat Johnson on code modernization, security and AI coding agents.">
+  <section class="intro wrap">
+    <div>
+      <h1>Complex products, <em>clearly</em> explained.</h1>
+      <p class="lede">Books, briefs, and blogs written for developers, used to launch a category and drive pipeline at Moderne. Samples from VMware, Pivotal, and CA Technologies available on request.</p>
+    </div>
+    <nav class="meta jump" aria-label="Sections">
+      <a href="#books">Books</a><br />
+      <a href="#briefs">Briefs</a><br />
+      <a href="#blogs">Blogs</a>
+    </nav>
+  </section>
+
+  <div class="wrap">
+    <section id="books">
+      <div class="section-head"><h2>Books</h2></div>
+      <Publications kind="book" />
+    </section>
+    <section id="briefs">
+      <div class="section-head"><h2>Briefs</h2></div>
+      <Publications kind="brief" />
+    </section>
+    <section id="blogs">
+      <div class="section-head"><h2>Blogs</h2><span class="meta">Originally published on Moderne's blog</span></div>
+      <PostList posts={posts} />
+    </section>
+  </div>
+</Base>
+
+<style>
+  .jump a { color: var(--muted); }
+  .jump a:hover { color: var(--accent); }
+  section[id] { scroll-margin-top: 16px; }
+</style>

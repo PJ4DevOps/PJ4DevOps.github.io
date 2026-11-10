@@ -1,0 +1,83 @@
+/* Figure, chart and call-out styles for the archived Moderne posts.
+   Rules extracted from moderne.ai's post stylesheet by archive/blogs/extract-figure-css.mjs
+   (`.post-body` rewritten to `.prose`, call-to-action rules dropped). The variables
+   below map Moderne's palette onto this site's, so charts use the brick accent. */
+.prose {
+  --bone: var(--ink); --bone-dim: var(--muted); --muted2: var(--line);
+  --surface: var(--band); --panel: var(--band); --bg2: var(--bg);
+  --green: var(--accent); --green-ink: var(--accent); --spectral-blue: var(--accent);
+  --font-mono: var(--small); --font-sans: var(--sans);
+  --fs-10: 10px; --fs-12: 12px; --fs-14: 14px; --fs-16: 16px; --fs-18: 18px; --fs-20: 20px; --fs-22: 22px;
+  --space-2: 2px; --space-4: 4px; --space-6: 6px; --space-8: 8px; --space-10: 10px; --space-12: 12px;
+  --space-14: 14px; --space-16: 16px; --space-18: 18px; --space-20: 20px; --space-22: 22px;
+  --space-24: 24px; --space-26: 26px;
+}
+.takeaways{border:1px solid color-mix(in srgb,var(--green) 26%,var(--line));background:color-mix(in srgb,var(--green) 5%,var(--surface));padding:var(--space-22) var(--space-26);border-radius:14px;margin:0 0 clamp(26px,3.5vw,38px)}
+.takeaways .tk-h{font-family:var(--font-sans);font-weight:600;font-size:var(--fs-16);color:var(--green-ink);margin-bottom:var(--space-12)}
+.takeaways ul{list-style:none}
+.takeaways ul li{padding-left:var(--space-22);margin-bottom:var(--space-8);font-size:var(--fs-16);color:var(--bone-dim);line-height:1.45;position:relative}
+.takeaways li:last-child{margin-bottom:0}
+.takeaways li:before{content:"✓";color:var(--green);font-weight:700;position:absolute;left:0}
+.post-note{padding:var(--space-14) var(--space-18);border:1px solid var(--line);background:var(--surface);font-family:var(--font-sans);font-size:var(--fs-16);color:var(--bone-dim);border-radius:10px;margin:clamp(26px,3.5vw,36px) 0;line-height:1.55}
+.post-note strong{color:var(--bone);font-weight:600}
+.prose figure,.prose>.post-embed{margin:clamp(26px,3.5vw,40px) 0}
+.prose figure.fig-inset{margin-inline:0}
+.prose .fig{padding:var(--space-24) var(--space-22) var(--space-20);border:1px solid var(--line);background:var(--surface);border-radius:14px;margin:2.3em 0}
+.prose .fig-h{font-family:var(--font-mono);font-size:var(--fs-12);letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--space-6)}
+.prose .fig-t{font-family:var(--font-sans);font-weight:600;font-size:var(--fs-18);color:var(--bone);margin:0 0 var(--space-20);letter-spacing:-.01em;line-height:1.3}
+.prose .fig-n{font-size:var(--fs-14);color:var(--muted);margin:var(--space-16) 0 0;line-height:1.55}
+.prose .fig figcaption{font-size:var(--fs-14);color:var(--muted);margin:var(--space-14) auto 0;text-align:center;line-height:1.55;font-family:var(--font-mono);max-width:62ch}
+.prose .fig-rank figcaption{max-width:none;margin-top:var(--space-20)}
+.prose .fig-arch .nc{fill:color-mix(in srgb,var(--bone) 4%,var(--bg2));stroke:var(--line);stroke-width:1.4px}
+.prose .fig-arch .nct{fill:var(--bone);font-family:var(--font-sans);font-size:var(--fs-16);font-weight:600}
+.prose .fig-arch .note{fill:var(--surface);stroke:var(--line);stroke-width:1px;stroke-dasharray:none}
+.prose .fig-arch .notet{fill:var(--muted);font-family:var(--font-mono);font-size:var(--fs-10)}
+.prose .fig-arch .lgd{fill:var(--muted2);font-family:var(--font-mono);font-size:var(--fs-12)}
+.prose .fig-trend .tr-plot{align-items:flex-end;gap:var(--space-2);height:180px;display:flex}
+.prose .fig-trend .tr-bar{background:var(--muted2);opacity:.65;border-radius:3px 3px 0 0;flex:1 1 0;min-height:2px}
+.prose .fig-trend .tr-bar.is-hot{background:var(--green);opacity:1}
+.prose .fig-trend .tr-x{gap:var(--space-2);margin-top:var(--space-10);display:flex}
+.prose .fig-trend .tr-x span{font-family:var(--font-mono);font-size:var(--fs-12);color:var(--muted);letter-spacing:.02em;white-space:nowrap;flex:1 1 0}
+@media (width<=620px){.prose .fig-trend .tr-x{justify-content:space-between;gap:0}
+.prose .fig-trend .tr-x span{flex:none;display:none}
+.prose .fig-trend .tr-x span:first-child,.prose .fig-trend .tr-x span:nth-child(22){display:block}}
+.prose .fig-rank .rk{gap:var(--space-10) var(--space-14);grid-template-columns:auto 1fr;align-items:center;display:grid}
+.prose .fig-rank .rk-l{font-size:var(--fs-14);color:var(--bone-dim);text-align:right;line-height:1.3}
+.prose .fig-rank .rk-t{align-items:center;gap:var(--space-10);min-width:0;display:flex}
+.prose .fig-rank .rk-bar{background:var(--muted2);opacity:.55;border-radius:0 4px 4px 0;min-width:2px;height:20px}
+.prose .fig-rank .rk-row.is-key .rk-bar{background:var(--green);opacity:1}
+.prose .fig-rank .rk-row.is-key .rk-l{color:var(--bone)}
+.prose .fig-rank .rk-v{font-family:var(--font-mono);font-size:var(--fs-14);color:var(--bone);flex:none;font-weight:600}
+@media (width<=620px){.prose .fig-rank .rk{gap:var(--space-4) 0;grid-template-columns:1fr}
+.prose .fig-rank .rk-l{text-align:left;margin-top:var(--space-10)}}
+.prose .fig-delta{width:fit-content;max-width:100%}
+.prose .fig-delta figcaption{max-width:44ch}
+.prose .fig-delta .dl{flex-wrap:wrap;align-items:flex-end;gap:clamp(18px,5vw,46px);display:flex}
+.prose .fig-delta .dl-i{flex:none}
+.prose .fig-delta .dl-n{font-family:var(--font-sans);letter-spacing:-.03em;color:var(--muted);font-size:clamp(40px,8vw,58px);font-weight:600;line-height:1;display:block}
+.prose .fig-delta .dl-i.is-key .dl-n{color:var(--green)}
+.prose .fig-delta .dl-u{font-family:var(--font-mono);font-size:var(--fs-12);letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin-top:var(--space-10);display:block}
+.prose .fig-delta .dl-arrow{color:var(--muted2);padding-bottom:var(--space-14);font-size:26px}
+.prose .fig-who .fig-scroll{-webkit-overflow-scrolling:touch;overflow:auto hidden}
+.prose .fig-who svg{width:100%;min-width:640px;height:auto;display:block}
+.prose .fig-who .nb{fill:var(--bg2);stroke:var(--line);stroke-width:1px}
+.prose .fig-who .nt{fill:var(--bone);font-family:var(--font-sans);font-size:var(--fs-16);font-weight:600}
+.prose .fig-who .nw{fill:var(--muted);font-family:var(--font-mono);font-size:var(--fs-12)}
+.prose .fig-who .pi{fill:none;stroke:var(--green);stroke-width:1.7px;stroke-linecap:round}
+.prose .fig-who .ob{stroke:var(--green);stroke-width:1.4px;fill:color-mix(in srgb,var(--green) 12%,var(--bg2))}
+.prose .fig-who .ot{fill:var(--green);font-family:var(--font-sans);font-size:var(--fs-20);font-weight:600}
+.prose .fig-who .os{fill:var(--bone-dim);font-family:var(--font-mono);font-size:var(--fs-12)}
+.prose .fig-who .oa{fill:var(--muted);font-family:var(--font-mono);font-size:var(--fs-12)}
+.prose .fig-who .fl{stroke:var(--muted);stroke-width:1.4px;fill:none}
+.prose .fig-arch .fig-scroll{-webkit-overflow-scrolling:touch;overflow:auto hidden}
+.prose .fig-arch svg{width:100%;min-width:620px;height:auto;display:block}
+.prose .fig-arch .nb{fill:var(--bg2);stroke:var(--line);stroke-width:1px}
+.prose .fig-arch .zn{fill:none;stroke:var(--line);stroke-width:1px;stroke-dasharray:5 4}
+.prose .fig-arch .zn-sub{stroke-dasharray:3 3;stroke:color-mix(in srgb,var(--line) 70%,transparent)}
+.prose .fig-arch .pi{fill:none;stroke:var(--green);stroke-width:1.6px;stroke-linecap:round}
+.prose .fig-arch .nb-key{stroke:var(--green);fill:color-mix(in srgb,var(--green) 10%,var(--bg2))}
+.prose .fig-arch .nt{fill:var(--bone);font-family:var(--font-sans);font-size:var(--fs-14);font-weight:600}
+.prose .fig-arch .ns{fill:var(--bone-dim);font-family:var(--font-sans);font-size:var(--fs-12)}
+.prose .fig-arch .zl{fill:var(--muted2);font-family:var(--font-mono);font-size:var(--fs-10);letter-spacing:.11em;text-transform:uppercase}
+.prose .fig-arch .fl{stroke:var(--muted);stroke-width:1.4px;fill:none}
+.prose .fig-arch .fll{fill:var(--muted);font-family:var(--font-mono);font-size:var(--fs-12)}

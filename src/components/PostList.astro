@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { WRITING_MODE } from '../site';
+
+interface Props { posts: CollectionEntry<'writing'>[] }
+const { posts } = Astro.props;
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+const coauthors = (a: string) => a.split(/\s+and\s+|,\s*/).filter(n => !/^Pat(ricia)? Johnson$/.test(n.trim()));
+---
+<ul class="posts">
+  {posts.map(p => {
+    const href = WRITING_MODE === 'full' ? `/writing/${p.id}/` : p.data.originalUrl;
+    const co = coauthors(p.data.author);
+    return (
+      <li>
+        <a href={href}>
+          <span class="meta date">{fmt(p.data.published)}</span>
+          <span class="body">
+            <span class="title">{p.data.title}</span>
+            <span class="desc">{p.data.description}</span>
+            <span class="meta">
+              {p.data.tags.join(' · ')}
+              {co.length > 0 && <> · with {co.join(' and ')}</>}
+            </span>
+          </span>
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .posts { list-style: none; margin: 0; padding: 0; }
+  li:first-child a { padding-top: 0; }
+  a { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 26px 0;
+      text-decoration: none; color: inherit; }
+  @media (max-width: 600px) { a { grid-template-columns: 1fr; gap: 6px; } }
+  .date { padding-top: 6px; }
+  .body { display: flex; flex-direction: column; gap: 6px; }
+  .title { font: 400 clamp(20px, 2.2vw, 26px)/1.2 var(--serif); letter-spacing: -0.01em; transition: color .2s; }
+  a:hover .title { color: var(--accent); }
+  .desc { color: var(--muted); font-size: 16px; max-width: 70ch; }
+</style>

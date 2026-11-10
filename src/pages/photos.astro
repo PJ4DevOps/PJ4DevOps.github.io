@@ -1,0 +1,192 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Base from '../layouts/Base.astro';
+import gallery from '../data/gallery.json';
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.jpg', { eager: true });
+const photos = await Promise.all(Object.entries(files).map(async ([file, mod]) => {
+  const id = file.split('/').pop()!.replace(/\.jpg$/, '');
+  const img = mod.default;
+  const [thumb, large] = await Promise.all([
+    getImage({ src: img, width: 800, format: 'webp', quality: 78 }),
+    getImage({ src: img, width: 2000, format: 'webp', quality: 82 }),
+  ]);
+  const tag = (gallery.photos as Record<string, { group: string; subject: string; note: string }>)[id];
+  return { id, w: img.width, h: img.height, thumb: thumb.src, large: large.src,
+           group: tag?.group ?? 'untagged:' + id, subject: tag?.subject ?? id, note: tag?.note ?? '' };
+}));
+const data = { photos, first: gallery.first ?? [] };
+---
+<Base title="Photos" description="Photographs by Pat Johnson: flowers, food, dogs, scenes, and the occasional pollinator.">
+  <section class="intro wrap">
+    <div>
+      <h1>Things worth <em>looking</em> at twice.</h1>
+      <p class="lede">Flowers, food, dogs, scenes, and the occasional pollinator, taken on whatever phone was in my pocket.</p>
+    </div>
+    <p class="meta">2012 – 2026</p>
+  </section>
+
+  <div class="collage wrap" id="collage">
+    <noscript>
+      <div class="col">
+        {photos.map(p => <img src={p.thumb} width={p.w} height={p.h} alt={p.note} loading="lazy" />)}
+      </div>
+    </noscript>
+  </div>
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <img id="lb-img" alt="" />
+    <button class="ctl close" id="lb-close" aria-label="Close">✕</button>
+    <button class="ctl prev" id="lb-prev" aria-label="Previous">←</button>
+    <button class="ctl next" id="lb-next" aria-label="Next">→</button>
+    <div class="count" id="lb-count"></div>
+  </div>
+
+  <script type="application/json" id="gallery-data" set:html={JSON.stringify(data)} />
+</Base>
+
+<script>
+  type Photo = { id: string; w: number; h: number; thumb: string; large: string;
+                 group: string; subject: string; note: string };
+  const { photos: all, first } = JSON.parse(document.getElementById('gallery-data')!.textContent!) as
+    { photos: Photo[]; first: string[] };
+  const grid = document.getElementById('collage')!;
+
+  // Place photos one at a time into the shortest column, choosing each time the photo
+  // least like its neighbours: the photo above it and those beside it. Same subject
+  // costs most, same group less; photos within about a screen count a little. Big
+  // groups get a nudge so they don't pile up at the bottom. Tags live in
+  // content/gallery.json; the weights were tuned on the first 41 photos.
+  const GAP = 0.03, SPREAD = 4, FAR = 0.3, REACH = 1.6;
+  type Placed = { p: Photo; top: number; bot: number };
+  function arrange(list: Photo[], n: number) {
+    const like = (a: Photo, b: Photo) => a.subject === b.subject ? 3 : a.group === b.group ? 1.5 : 0;
+    const cols: Placed[][] = Array.from({ length: n }, () => []);
+    const h: number[] = Array(n).fill(0);
+    const rest = [...list], seq: Photo[] = [];
+    const pinned = first.map(id => rest.find(p => p.id === id)).filter((p): p is Photo => !!p);
+    while (rest.length) {
+      const k = h.indexOf(Math.min(...h)), top = h[k];
+      const cost = (p: Photo) => {
+        const bot = top + p.h / p.w, near: Placed[] = [], far: Placed[] = [], col = cols[k];
+        if (col.length) near.push(col[col.length - 1]);
+        if (col.length > 1) far.push(col[col.length - 2]);
+        for (let j = 0; j < n; j++) {
+          if (j === k) continue;
+          for (const q of cols[j]) {
+            const overlap = Math.min(bot, q.bot) - Math.max(top, q.top);
+            if (Math.abs(j - k) === 1 && overlap > 0.1) near.push(q);
+            else if (overlap > -REACH) far.push(q);
+          }
+        }
+        let c = 0;
+        for (const q of near) c += like(p, q.p);
+        for (const q of far) c += FAR * like(p, q.p);
+        c -= SPREAD * rest.filter(r => r.group === p.group).length / rest.length;
+        return c;
+      };
+      const p = pinned.length ? pinned.shift()! : rest.reduce((a, b) => cost(b) < cost(a) - 1e-9 ? b : a);
+      rest.splice(rest.indexOf(p), 1);
+      const item = { p, top, bot: top + p.h / p.w };
+      cols[k].push(item);
+      seq.push(p);
+      h[k] = item.bot + GAP;
+    }
+    return { cols: cols.map(c => c.map(i => i.p)), seq };
+  }
+
+  const buttons = new Map(all.map(p => {
+    const b = document.createElement('button');
+    b.innerHTML = `<img src="${p.thumb}" width="${p.w}" height="${p.h}" loading="lazy" alt="">`;
+    b.querySelector('img')!.alt = p.note;
+    b.onclick = () => open(photos.indexOf(p));
+    return [p.id, b];
+  }));
+
+  let photos: Photo[] = [], cols = 0;
+  function layout() {
+    const n = innerWidth >= 1100 ? 4 : innerWidth >= 720 ? 3 : 2;
+    if (n === cols) return;
+    cols = n;
+    const r = arrange(all, n);
+    photos = r.seq;
+    grid.replaceChildren(...r.cols.map(c => {
+      const el = document.createElement('div');
+      el.className = 'col';
+      el.append(...c.map(p => buttons.get(p.id)!));
+      return el;
+    }));
+    photos.forEach((p, i) => buttons.get(p.id)!.setAttribute('aria-label', `Open photo ${i + 1}: ${p.note}`));
+  }
+  layout();
+  addEventListener('resize', layout);
+
+  const lb = document.getElementById('lb')!, img = document.getElementById('lb-img') as HTMLImageElement,
+        count = document.getElementById('lb-count')!, closeBtn = document.getElementById('lb-close')!;
+  let cur = 0, lastFocus: HTMLElement | null = null;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  function show(i: number) {
+    cur = (i + photos.length) % photos.length;
+    img.src = photos[cur].large;
+    img.alt = photos[cur].note;
+    count.textContent = pad(cur + 1) + ' / ' + pad(photos.length);
+    new Image().src = photos[(cur + 1) % photos.length].large;
+  }
+  function open(i: number) {
+    lastFocus = document.activeElement as HTMLElement;
+    show(i);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  }
+  closeBtn.onclick = close;
+  document.getElementById('lb-prev')!.onclick = e => { e.stopPropagation(); show(cur - 1); };
+  document.getElementById('lb-next')!.onclick = e => { e.stopPropagation(); show(cur + 1); };
+  lb.onclick = e => { if (e.target === lb) close(); };
+  addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+  let x0: number | null = null;
+  lb.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+  });
+</script>
+
+<style is:global>
+  .collage { display: flex; gap: var(--gap, 10px); align-items: flex-start; padding-bottom: 16px; }
+  .collage .col { flex: 1; min-width: 0; }
+  @media (max-width: 480px) { .collage { --gap: 6px; } }
+  .collage button { all: unset; display: block; width: 100%; margin-bottom: var(--gap, 10px);
+                    cursor: zoom-in; overflow: hidden; border-radius: 3px; background: var(--band); }
+  .collage img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .collage button:hover img { transform: scale(1.03); }
+  .collage button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .lb { position: fixed; inset: 0; background: var(--band);  /* Barren Plain, like the header and footer */ display: none;
+        align-items: center; justify-content: center; z-index: 10; }
+  .lb.open { display: flex; }
+  .lb img { max-width: calc(100vw - 32px); max-height: calc(100vh - 96px); object-fit: contain; border-radius: 2px;
+            box-shadow: 0 2px 6px #0002, 0 16px 48px #0002; }
+  .lb .ctl { all: unset; position: absolute; color: var(--ink); cursor: pointer; padding: 16px;
+             font: 300 30px/1 var(--serif); user-select: none; opacity: .7; }
+  .lb .ctl:hover, .lb .ctl:focus-visible { opacity: 1; color: var(--accent); }
+  .lb .close { top: 8px; right: 10px; font-size: 26px; }
+  .lb .prev { left: 6px; top: 50%; transform: translateY(-50%); }
+  .lb .next { right: 6px; top: 50%; transform: translateY(-50%); }
+  .lb .count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center;
+               color: var(--muted); font: 400 14px/1 var(--small); letter-spacing: .08em; }
+  @media (max-width: 600px) { .lb .prev, .lb .next { display: none; } }
+</style>
