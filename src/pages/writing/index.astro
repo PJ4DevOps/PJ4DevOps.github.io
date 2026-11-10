@@ -6,7 +6,7 @@ import PostList from '../../components/PostList.astro';
 
 const posts = (await getCollection('writing')).sort((a, b) => +b.data.published - +a.data.published);
 ---
-<Base title="Writing" description="Books, briefs and articles by Pat Johnson on code modernization, security and AI coding agents.">
+<Base title="Writing" description="Books, briefs, and blogs by Pat Johnson, written for developers and leaders, on code modernization, security, and AI coding agents.">
   <section class="intro wrap">
     <div>
       <h1>Complex products, <em>clearly</em> explained.</h1>

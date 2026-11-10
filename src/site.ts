@@ -1,7 +1,7 @@
 // Site-wide settings. Placeholders are marked TODO until Pat supplies the details.
 export const SITE = {
   name: 'Pat Johnson',
-  description: 'Writing, publications and photographs by Pat Johnson.',
+  description: 'Pat Johnson, product and content marketer for developer tools and AI: books, briefs, and blogs, plus photographs.',
   // TODO: Pat's public contact email, if she wants one on the site.
   email: '',
   linkedin: 'https://www.linkedin.com/in/allaboutpat/',

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE, NAV } from '../site';
+import resume from '../data/resume.json';
 
 interface Props {
   title?: string;
@@ -12,6 +13,24 @@ const { title, description = SITE.description, canonical, image } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE.name}` : SITE.name;
 const path = Astro.url.pathname;
 const canonicalUrl = canonical ?? (Astro.site ? new URL(path, Astro.site).href : undefined);
+const site = Astro.site ?? Astro.url;
+const ogImage = new URL(image ?? '/og.png', site).href;
+
+// Who Pat is, in a form search engines and AI tools read directly (home and About only).
+const person = (path === '/' || path === '/about/') && {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: resume.name,
+  alternateName: SITE.name,
+  url: new URL('/', site).href,
+  image: new URL('/og.png', site).href,
+  jobTitle: resume.headline,
+  description: resume.summary,
+  address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX', addressCountry: 'US' },
+  sameAs: [resume.linkedin],
+  alumniOf: resume.education.map(e => ({ '@type': 'CollegeOrUniversity', name: e.school })),
+  knowsAbout: resume.skills,
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -24,7 +43,13 @@ const canonicalUrl = canonical ?? (Astro.site ? new URL(path, Astro.site).href :
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  {image && <meta property="og:image" content={new URL(image, Astro.site ?? Astro.url).href} />}
+  <meta property="og:site_name" content={SITE.name} />
+  {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+  <meta property="og:image" content={ogImage} />
+  {!image && <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>}
+  <meta property="og:image:alt" content={image ? fullTitle : 'Pat Johnson. Every product has a story. I find it.'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  {person && <script type="application/ld+json" set:html={JSON.stringify(person)} />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
