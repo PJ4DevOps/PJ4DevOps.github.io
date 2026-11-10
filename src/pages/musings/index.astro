@@ -5,11 +5,11 @@ import PostList from '../../components/PostList.astro';
 
 const posts = (await getCollection('musings')).sort((a, b) => +b.data.published - +a.data.published);
 ---
-<Base title="Musings" description="Personal pieces by Pat Johnson on work, AI, marketing, and whatever caught her eye.">
+<Base title="Musings" description="Personal pieces by Pat Johnson on marketing, AI, hobbies, and whatever caught her eye.">
   <section class="intro wrap">
     <div>
       <h1>Thinking out <em>loud</em>.</h1>
-      <p class="lede">Personal pieces on work, AI, marketing, and whatever caught my eye.</p>
+      <p class="lede">Personal pieces on marketing, AI, hobbies, and whatever caught my eye.</p>
     </div>
   </section>
 
