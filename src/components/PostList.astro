@@ -2,14 +2,15 @@
 import type { CollectionEntry } from 'astro:content';
 import { WRITING_MODE } from '../site';
 
-interface Props { posts: CollectionEntry<'writing'>[] }
-const { posts } = Astro.props;
+interface Props { posts: CollectionEntry<'writing' | 'musings'>[]; base?: string }
+const { posts, base = '/writing/' } = Astro.props;
 const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
 const coauthors = (a: string) => a.split(/\s+and\s+|,\s*/).filter(n => !/^Pat(ricia)? Johnson$/.test(n.trim()));
 ---
 <ul class="posts">
   {posts.map(p => {
-    const href = WRITING_MODE === 'full' ? `/writing/${p.id}/` : p.data.originalUrl;
+    // Writing posts link out to the original when the archive is in summary mode.
+    const href = 'originalUrl' in p.data && WRITING_MODE !== 'full' ? p.data.originalUrl : `${base}${p.id}/`;
     const co = coauthors(p.data.author);
     return (
       <li>

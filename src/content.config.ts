@@ -17,4 +17,16 @@ const writing = defineCollection({
   }),
 });
 
-export const collections = { writing };
+// Pat's own pieces. They live only in this folder (the content import never touches it).
+const musings = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/musings' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    author: z.string().default('Pat Johnson'),
+    published: z.coerce.date(),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { writing, musings };

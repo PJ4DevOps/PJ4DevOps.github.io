@@ -14,5 +14,6 @@ export const WRITING_MODE: 'full' | 'summary' = 'full';
 export const NAV = [
   { href: '/writing/', label: 'Writing' },
   { href: '/photos/', label: 'Photos' },
+  { href: '/musings/', label: 'Musings' },
   { href: '/about/', label: 'About' },
 ];

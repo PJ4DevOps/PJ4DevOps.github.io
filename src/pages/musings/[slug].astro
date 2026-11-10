@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import '../../styles/article.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('musings');
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const fmt = (x: Date) => x.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title={d.title} description={d.description}>
+  <article class="post">
+    <header class="wrap head">
+      <h1>{d.title}</h1>
+      <p class="byline">{d.author}</p>
+      <p class="meta">{fmt(d.published)}{d.tags.length > 0 && <> · {d.tags.join(', ')}</>}</p>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    <p class="wrap back"><a href="/musings/">← All musings</a></p>
+  </article>
+</Base>
+
+<style>
+  .head { padding-bottom: 16px; }
+  .back { max-width: calc(var(--text) + 32px); margin-top: 48px; }
+</style>

@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+
+const posts = (await getCollection('musings')).sort((a, b) => +b.data.published - +a.data.published);
+---
+<Base title="Musings" description="Personal pieces by Pat Johnson on work, tools, AI, and whatever caught her eye.">
+  <section class="intro wrap">
+    <div>
+      <h1>Thinking out <em>loud</em>.</h1>
+      <p class="lede">Personal pieces on work, tools, AI, and whatever caught my eye.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <PostList posts={posts} base="/musings/" />
+  </div>
+</Base>
