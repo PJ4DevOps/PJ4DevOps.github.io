@@ -1,5 +1,5 @@
 ---
-title: Barren Plain, a pollinator, and AI
+title: "Building a website: Barren Plain, a pollinator, and AI"
 description: How I built this site with Claude Code in about seven hours, from a paint color to a live domain.
 published: 2026-11-10
 tags: [AI, Claude Code, this site]
