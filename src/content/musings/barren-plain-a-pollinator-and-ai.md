@@ -5,7 +5,7 @@ published: 2026-11-10
 tags: [AI, Claude Code, this site]
 ---
 
-I've used the Benjamin Moore color Barren Plain in most rooms in my house. Something about it is soothing, it goes with so many things, and frankly it looks good in every light. It's got way more character than plain white. That was my first impulse for the site. It's the header, footer, and photo background. Benjamin Moore suggested other colors that pair well with it. I wanted a lighter main background, so I went with Chantilly Lace. Eagle Rock, darkened, became the text color. Claude sampled the brick accent color from my citrus and hibiscus photos. I didn't ask.
+I've used the Benjamin Moore color Barren Plain in most rooms in my house. Something about it is soothing, it goes with so many things, and frankly it looks good in every light. That was my first impulse for the site. It's the header, footer, and photo background. Benjamin Moore suggested other colors that pair well with it. I wanted a lighter main background, so I went with Chantilly Lace. Eagle Rock, darkened, became the text color. Claude sampled the brick accent color from my citrus and hibiscus photos. I didn't ask.
 
 The photos were my other impulse: a collage of shots that make me happy and show something about how I see the world. I compiled a folder of photos I wanted to share, and Claude labeled and ordered them, then used the Photos page as the first draft of the actual site. We honed it: Claude removed location data from the photos, and I suggested we make sure the photo themes are not juxtaposed in the collage. I went with Claude's first draft of the page headline but edited the copy. Pollinator had to be in there.
 
