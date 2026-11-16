@@ -6,7 +6,7 @@ published: 2026-06-25
 tags: ["Code Security", "Developer Skills", "Code Analysis"]
 originalUrl: "https://moderne.ai/blog/post-quantum-cryptography-implementation-at-scale"
 publisher: "Moderne"
-hero: "/writing/post-quantum-cryptography-implementation-at-scale/pqc.png"
+hero: "/samples/post-quantum-cryptography-implementation-at-scale/pqc.png"
 ---
 
 <aside class="takeaways">

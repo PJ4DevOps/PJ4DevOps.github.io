@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { WRITING_MODE } from '../site';
 
 interface Props { posts: CollectionEntry<'writing' | 'musings'>[]; base?: string }
-const { posts, base = '/writing/' } = Astro.props;
+const { posts, base = '/samples/' } = Astro.props;
 const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
 const coauthors = (a: string) => a.split(/\s+and\s+|,\s*/).filter(n => !/^Pat(ricia)? Johnson$/.test(n.trim()));
 ---

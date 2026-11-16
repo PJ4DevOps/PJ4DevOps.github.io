@@ -7,7 +7,7 @@ updated: "October 1, 2026"
 tags: ["Code Modernization", "OpenRewrite", "Product"]
 originalUrl: "https://moderne.ai/blog/large-scale-code-changes"
 publisher: "Moderne"
-hero: "/writing/large-scale-code-changes/trusting-big-scale-code-changes.jpg"
+hero: "/samples/large-scale-code-changes/trusting-big-scale-code-changes.jpg"
 ---
 
 Large-scale code changes are trustworthy when every change comes from a deterministic recipe, every result can be reviewed before it’s committed, and developers decide what merges. Moderne runs that process across thousands of repositories at once, so a fix or migration lands everywhere it’s needed.
@@ -107,7 +107,7 @@ Moderne gives platform teams a proactive role in code quality and modernization 
 - **Track every change** with [Changelog](https://moderne.ai/moderne-agent-tools/changelog), which follows pull requests and commits across repositories and source control systems, organized the way the company is.
 - **Lead on urgent issues** like critical vulnerabilities, pushing fixes at scale so they’re adopted fast.
 
-![Moderne DevCenter dashboard showing organizational ownership and change campaigns tracking each repository&#x27;s progress toward Spring Boot 4.0, Java 25 and JUnit 6](/writing/large-scale-code-changes/devcenter-dashboard.png)
+![Moderne DevCenter dashboard showing organizational ownership and change campaigns tracking each repository&#x27;s progress toward Spring Boot 4.0, Java 25 and JUnit 6](/samples/large-scale-code-changes/devcenter-dashboard.png)
 *Change campaigns in DevCenter. Each campaign tracks every repository’s progress toward the target version.*
 
 ## Large-scale change becomes routine when the process supports it.

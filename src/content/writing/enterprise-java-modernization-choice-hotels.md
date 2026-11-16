@@ -6,7 +6,7 @@ published: 2026-06-25
 tags: ["Case Studies", "Code Modernization"]
 originalUrl: "https://moderne.ai/blog/enterprise-java-modernization-choice-hotels"
 publisher: "Moderne"
-hero: "/writing/enterprise-java-modernization-choice-hotels/choice-hotels-java-25.jpg"
+hero: "/samples/enterprise-java-modernization-choice-hotels/choice-hotels-java-25.jpg"
 ---
 
 [Choice Hotels International](https://www.choicehotels.com/about) has long been a technology pioneer in hospitality. In 1983, it launched the industry’s first global reservation system. Two decades later, it was first to offer a SaaS property management system to franchisees. In 2017, it became the first hotel company to fully rebuild its central reservation system from scratch—100% in Java, deployed on AWS.
@@ -67,7 +67,7 @@ The result: fast, repeatable, and safe modernization across hundreds of codebase
 
 To scale adoption, the platform team provided a developer’s guide, ran workshops with key engineers, and equipped each application group to lead their own rollouts. They also updated CI pipelines, refreshed base AMIs, and validated testing tools for Java 25.
 
-![Figure 1. Choice Hotels’ prep work for Java 25 migration with Moderne (from Code Remix Summit session by Jason Simpson, VP of Engineering, Choice Hotels)](/writing/enterprise-java-modernization-choice-hotels/ad-4nxemkxqhlqgv2gxhqbsmk1llhltqc-tarpo6fwouoho1b6-c18fb72d.png)
+![Figure 1. Choice Hotels’ prep work for Java 25 migration with Moderne (from Code Remix Summit session by Jason Simpson, VP of Engineering, Choice Hotels)](/samples/enterprise-java-modernization-choice-hotels/ad-4nxemkxqhlqgv2gxhqbsmk1llhltqc-tarpo6fwouoho1b6-c18fb72d.png)
 *Figure 1. Choice Hotels’ prep work for Java 25 migration with Moderne (from Code Remix Summit session by Jason Simpson, VP of Engineering, Choice Hotels)*
 
 ### Running the Java 25 migration: Pilots to full roll-out
@@ -101,7 +101,7 @@ The scope of the migration was substantial:
 - Major package and framework changes automated using OpenRewrite
 - Coordinated rollout across teams using Moderne’s centralized platform
 
-![Figure 2. Comparing scope and productivity of two Choice Hotels Java migrations](/writing/enterprise-java-modernization-choice-hotels/ad-4nxch9vfpxqyp3n-upv1sm7nunonievhj4mff8zvdaywvmt-e6515360.png)
+![Figure 2. Comparing scope and productivity of two Choice Hotels Java migrations](/samples/enterprise-java-modernization-choice-hotels/ad-4nxch9vfpxqyp3n-upv1sm7nunonievhj4mff8zvdaywvmt-e6515360.png)
 *Figure 2. Comparing scope and productivity of two Choice Hotels Java migrations*
 
 The cloud platform team provided the tools and patterns, while application teams took ownership of running migrations and deploying confidently. Moderne became the hub for central governance and distributed execution for the migration. Instead of performing one upgrade per version across hundreds of services, teams were able to execute a single coordinated transformation with Moderne.

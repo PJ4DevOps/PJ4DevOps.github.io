@@ -4,7 +4,7 @@
 //   ../content/pictures/*        → src/assets/photos/<id>.jpg  (rotated, ≤2400px, all metadata stripped)
 //   ../content/gallery.json      → src/data/gallery.json
 //   ../content/publications/     → public/pdfs/*.pdf, src/assets/covers/*.png, src/data/publications.json
-//   ../archive/blogs/posts/<slug> → src/content/writing/<slug>.md, public/writing/<slug>/*
+//   ../archive/blogs/posts/<slug> → src/content/writing/<slug>.md, public/samples/<slug>/*
 //   ../content/resume.json       → src/data/resume.json
 //
 // Run with: npm run import
@@ -66,18 +66,18 @@ async function publications() {
 async function writing() {
   const src = path.join(root, 'archive/blogs/posts');
   const mdOut = path.join(site, 'src/content/writing');
-  const imgOut = path.join(site, 'public/writing');
+  const imgOut = path.join(site, 'public/samples');
   await reset(mdOut);
   await reset(imgOut);
   const slugs = (await fs.readdir(src, { withFileTypes: true })).filter(d => d.isDirectory()).map(d => d.name);
   for (const slug of slugs) {
     let md = await fs.readFile(path.join(src, slug, 'index.md'), 'utf8');
-    // Point image references (Markdown and raw HTML) at the copies served from /writing/<slug>/.
-    md = md.replace(/\]\(images\//g, `](/writing/${slug}/`)
-           .replace(/src="images\//g, `src="/writing/${slug}/`)
-           .replace(/^hero: "images\//m, `hero: "/writing/${slug}/`)
+    // Point image references (Markdown and raw HTML) at the copies served from /samples/<slug>/.
+    md = md.replace(/\]\(images\//g, `](/samples/${slug}/`)
+           .replace(/src="images\//g, `src="/samples/${slug}/`)
+           .replace(/^hero: "images\//m, `hero: "/samples/${slug}/`)
            // Site-relative links left in raw HTML blocks pointed at moderne.ai pages.
-           .replace(/href="\/(?!writing\/)/g, 'href="https://moderne.ai/');
+           .replace(/href="\/(?!samples\/)/g, 'href="https://moderne.ai/');
     // Pat wrote or co-wrote everything on the site; Moderne credits some posts to "The Moderne Team".
     md = md.replace(/^author: "The Moderne Team"$/m, 'author: "Pat Johnson"');
     // Drop Moderne's marketing call-to-action blocks.

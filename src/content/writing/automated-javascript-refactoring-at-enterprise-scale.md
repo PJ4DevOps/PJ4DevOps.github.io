@@ -6,7 +6,7 @@ published: 2025-10-14
 tags: ["Code Modernization", "Product"]
 originalUrl: "https://moderne.ai/blog/automated-javascript-refactoring-at-enterprise-scale"
 publisher: "Moderne"
-hero: "/writing/automated-javascript-refactoring-at-enterprise-scale/js-announce.jpg"
+hero: "/samples/automated-javascript-refactoring-at-enterprise-scale/js-announce.jpg"
 ---
 
 Modern enterprises don’t live in a single language. They operate across entire stacks—Java powering services, JavaScript driving experiences, infrastructure shaping delivery. Yet code transformation has long been fragmented: different tools for different languages, no shared foundation, no way to evolve the stack together.
@@ -25,7 +25,7 @@ This shifts JavaScript refactoring from *syntax-bound* to *semantically-aware*. 
 
 But the real impact of the LST comes when it’s paired with Moderne, where recipes don’t just work in a single repo, they scale across thousands of repositories as well as providing orchestration, reporting, and auditability. That’s what makes Moderne the first platform to unify full-stack, multi-language modernization for the enterprise.
 
-![Figure 1. Universal Moderne Platform—frontend, backend, and infrastructure modernization](/writing/automated-javascript-refactoring-at-enterprise-scale/full-stack-image.png)
+![Figure 1. Universal Moderne Platform—frontend, backend, and infrastructure modernization](/samples/automated-javascript-refactoring-at-enterprise-scale/full-stack-image.png)
 *Figure 1. Universal Moderne Platform—frontend, backend, and infrastructure modernization*
 
 ## Why codemods fall short
@@ -81,7 +81,7 @@ With the LST, recipes have all the information they need to generate data tables
 
 [](https://docs.google.com/spreadsheets/d/1OL49y7rFQM-EnIw4z0Z4YnID-TRoSAcAiG1u5W1wcY8/edit?gid=0#gid=0)
 
-![Figure 2. Part of a data table listing React hooks found across multiple repositories. Click to explore.](/writing/automated-javascript-refactoring-at-enterprise-scale/3dff6025.png)
+![Figure 2. Part of a data table listing React hooks found across multiple repositories. Click to explore.](/samples/automated-javascript-refactoring-at-enterprise-scale/3dff6025.png)
 *Figure 2. Part of a data table listing React hooks found across multiple repositories. Click to explore.*
 
 This unlocks research use cases such as:

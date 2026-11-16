@@ -6,7 +6,7 @@ published: 2025-04-17
 tags: ["Code Modernization", "Product", "Developer Skills"]
 originalUrl: "https://moderne.ai/blog/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne"
 publisher: "Moderne"
-hero: "/writing/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/m-batch-changes.jpg"
+hero: "/samples/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/m-batch-changes.jpg"
 ---
 
 Modern development teams are under constant pressure to keep codebases up-to-date, secure, and compliant—across potentially hundreds or thousands of repositories. This can include performing framework migrations for multiple apps, upgrading dependencies across hundreds of services, or reacting to security or compliance alerts.
@@ -33,7 +33,7 @@ Diffs from individual publish commands using the same recipe run ID are grouped 
 
 Code diffs submitted to Moderne are encrypted with your own managed key (BYOK), in the same way Lossless Semantic Trees (LSTs) are, ensuring your intellectual property is always protected.
 
-![Figure 1. Batch changes imported into the Moderne Platform for PR issuance](/writing/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxdccbgnqbubcvx1bx6j3cfdgvjm3wgkddh96ravl83nbh-f4610df1.png)
+![Figure 1. Batch changes imported into the Moderne Platform for PR issuance](/samples/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxdccbgnqbubcvx1bx6j3cfdgvjm3wgkddh96ravl83nbh-f4610df1.png)
 *Figure 1. Batch changes imported into the Moderne Platform for PR issuance*
 
 From there, you can issue PRs and review statuses across all relevant repositories.
@@ -44,17 +44,17 @@ At Moderne, [mass pull request issuance](https://docs.moderne.io/user-documentat
 
 Once batch changes are loaded into the Moderne Platform, they appear just like the results of an OpenRewrite recipe run—fully integrated into the user interface as shown in Figure 1. From there, you can take action on all changes with ease. Moderne supports issuing pull requests with fully customizable commit messages, branch naming conventions, and PR metadata, giving you complete control over how changes are presented and reviewed. Beyond just PRs, the platform also supports direct commits, branch creation, forks, and PRs from forks to accommodate a wide range of organizational workflows and governance models. Figures 2 and 3 show examples of committing and merging batch changes.
 
-![Figure 2. Creating a pull request in the Moderne Platform](/writing/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxczpwfveiay2gnqjapfbhaszrnwqdah1paoz8ehddq6ej-a3aa8e75.png)
+![Figure 2. Creating a pull request in the Moderne Platform](/samples/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxczpwfveiay2gnqjapfbhaszrnwqdah1paoz8ehddq6ej-a3aa8e75.png)
 *Figure 2. Creating a pull request in the Moderne Platform*
 
-![Figure 3. Merging changes directly from the Moderne Platform](/writing/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/batch-changes-merge.png)
+![Figure 3. Merging changes directly from the Moderne Platform](/samples/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/batch-changes-merge.png)
 *Figure 3. Merging changes directly from the Moderne Platform*
 
 Automating PR issuance at scale can be tricky—potentially leading to SCM outages and CI storms, especially when you’re working across hundreds or thousands of repositories. Moderne handles the complexity for you, automating interactions with SCM systems while accounting for rate limits, timeouts, and load distribution. Moderne is designated as a co-author on these PRs, which also allows you to know what PRs are made with automation.
 
 You have access to centralized tracking for all the batch change campaigns, with status and accountability, enabling better coordination across teams and initiatives as shown in Figure 4.
 
-![Figure 4. Tracking commit and PR status in the Batch Changes Activity View](/writing/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxex7t0rmbaa-jhkmcy-rlkiiaopqk8ieseog6fy-dvi3j-c380ea48.png)
+![Figure 4. Tracking commit and PR status in the Batch Changes Activity View](/samples/how-to-modernize-at-scale-batch-changes-and-mass-pr-issuance-with-moderne/ad-4nxex7t0rmbaa-jhkmcy-rlkiiaopqk8ieseog6fy-dvi3j-c380ea48.png)
 *Figure 4. Tracking commit and PR status in the Batch Changes Activity View*
 
 Watch the whole process of working with batch changes in the Moderne Platform:

@@ -9,7 +9,7 @@ const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.j
 const photo = (id: string) => files[`../assets/photos/${id}.jpg`].default;
 
 const doors = [
-  { href: '/writing/', label: 'Writing', meta: 'Books, briefs, and blogs', img: photo('img_3305') },
+  { href: '/samples/', label: 'Samples', meta: 'Books, briefs, and blogs', img: photo('img_3305') },
   { href: '/photos/', label: 'Photos', meta: 'Flowers, food, dogs, and scenes', img: photo('img_0608') },
   { href: '/about/', label: 'About', meta: 'Résumé & contact', img: photo('img_6375') },
 ];

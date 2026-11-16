@@ -7,7 +7,7 @@ updated: "October 7, 2026"
 tags: ["Code Security", "Developer Skills"]
 originalUrl: "https://moderne.ai/blog/best-practices-for-preventing-cybersecurity-threats"
 publisher: "Moderne"
-hero: "/writing/best-practices-for-preventing-cybersecurity-threats/hero.png"
+hero: "/samples/best-practices-for-preventing-cybersecurity-threats/hero.png"
 ---
 
 Finding a vulnerability is the start of the work. Fixing it in every repository where it appears takes far longer, and that’s where security backlogs grow. [Moderne](https://moderne.ai/platform) closes the gap between finding and fixing with [OpenRewrite](https://moderne.ai/openrewrite) recipes that find and fix vulnerabilities across all of an organization’s code at once.
@@ -16,7 +16,7 @@ The gap is already wide. Veracode’s [2025 State of Software Security report](h
 
 Moderne works on it in four places, from exposed secrets to framework migrations. Together they cover both layers of the stack: the code your teams write and the supply chain it depends on. For the step-by-step version, read [the playbook for secure code at scale](https://moderne.ai/blog/vulnerability-remediation-playbook).
 
-![Address the OWASP Top 10 in four ways: in-depth code analysis, static code analysis (SAST), software composition analysis (SCA), and third-party code migration](/writing/best-practices-for-preventing-cybersecurity-threats/owasp-coverage.png)
+![Address the OWASP Top 10 in four ways: in-depth code analysis, static code analysis (SAST), software composition analysis (SCA), and third-party code migration](/samples/best-practices-for-preventing-cybersecurity-threats/owasp-coverage.png)
 
 ## 1. Code analysis finds exposed secrets and insecure APIs.
 

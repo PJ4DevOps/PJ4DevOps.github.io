@@ -6,7 +6,7 @@ published: 2025-12-04
 tags: ["Code Modernization", "Code Analysis"]
 originalUrl: "https://moderne.ai/blog/tech-stack-liquidity-managing-tech-debt"
 publisher: "Moderne"
-hero: "/writing/tech-stack-liquidity-managing-tech-debt/tech-debt-to-liquidity.jpg"
+hero: "/samples/tech-stack-liquidity-managing-tech-debt/tech-debt-to-liquidity.jpg"
 ---
 
 Smart money managers will tell you to eliminate debt so you can move forward. Technical debt feels similar—until you try to pay it down. Unlike financial debt, it re-forms instantly. Every framework release, every CVE, every dependency change adds another layer. Even “clean” code can age overnight.
@@ -44,7 +44,7 @@ But the reality was even more complicated. An intermediate step of moving from W
 
 Fixing one thing can become an archaeological dig through a decade of accumulated decisions—each layer blocking the next. This is the real cost of falling behind: when even a small vulnerability forces a multi-year modernization program. Without automation and tech stack liquidity, organizations can’t move fast enough to mitigate risk, and every delay compounds cost, pressure, and exposure at precisely the moment they need to move fastest.
 
-![](/writing/tech-stack-liquidity-managing-tech-debt/d1df4c85.png)
+![](/samples/tech-stack-liquidity-managing-tech-debt/d1df4c85.png)
 
 ## Why mass-scale automation is essential
 
@@ -52,7 +52,7 @@ Traditional modernization approaches treat codebases like siloed projects—fixi
 
 This is why mass-scale automation is essential. Built on the OpenRewrite refactoring framework, Moderne enables horizontal change—automated modernization that spans thousands of repositories and billions of lines of code at once. Instead of upgrading one application while the rest of the estate drifts further out of date, organizations can modernize across the board, in parallel, and keep the entire stack aligned. What once took months of expensive, piecemeal work can now be completed cohesively at scale.
 
-![](/writing/tech-stack-liquidity-managing-tech-debt/baec8977.png)
+![](/samples/tech-stack-liquidity-managing-tech-debt/baec8977.png)
 
 At the core of this capability is Moderne’s [Lossless Semantic Tree (LST)](https://moderne.ai/platform/lst)—a next-generation code data model that captures not just text, but also the structure, semantics, and relationships embedded in code. Paired with deterministic recipes, the LST gives enterprises the power to remediate vulnerabilities, update dependencies, and enforce best practices consistently across all repositories, not just one at a time. Moderne executes transformations with the same accuracy every time, across every repository.
 
@@ -105,6 +105,6 @@ Moderne’s approach to future-proofing your software helps ensure a competitive
 
 Learn 7 ways tech stack liquidity changes how you think about tech debt:
 
-![](/writing/tech-stack-liquidity-managing-tech-debt/tsl-vs-tech-debt.png)
+![](/samples/tech-stack-liquidity-managing-tech-debt/tsl-vs-tech-debt.png)
 
 [](https://info.moderne.ai/tech-stack-liquidity-vs-tech-debt)

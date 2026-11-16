@@ -7,7 +7,7 @@ updated: "October 9, 2026"
 tags: ["AI/ML", "Code Analysis", "Product"]
 originalUrl: "https://moderne.ai/blog/from-grep-to-moderne-trigrep-code-search-for-agents"
 publisher: "Moderne"
-hero: "/writing/from-grep-to-moderne-trigrep-code-search-for-agents/moderne-trigrep.jpg"
+hero: "/samples/from-grep-to-moderne-trigrep-code-search-for-agents/moderne-trigrep.jpg"
 ---
 
 <aside class="takeaways">
@@ -55,13 +55,13 @@ Imprecise search results also compete for limited context window space, crowding
 
 For a human developer, those costs are mostly invisible. For agents operating autonomously, often performing dozens or hundreds of searches or sub-searches during a single workflow, they compound quickly.
 
-![](/writing/from-grep-to-moderne-trigrep-code-search-for-agents/grep-search.png)
+![](/samples/from-grep-to-moderne-trigrep-code-search-for-agents/grep-search.png)
 
 At scale, inefficient discovery becomes a real operational expense: context windows fill with irrelevant data, more tokens get burned, iteration slows, and automation ends up less efficient and more costly.
 
 Sub-second indexed discovery with Trigrep flips that equation. By making code search effectively instantaneous and more precise, it reduces reasoning overhead before the first line of automation runs. Agents can orient faster, focus their analysis, and spend more of their effort on meaningful change rather than repeated exploration. We tested Trigrep calls against grep and glob to compare response times.
 
-![](/writing/from-grep-to-moderne-trigrep-code-search-for-agents/moderne-trigrep-execution-time-vs-grep.png)
+![](/samples/from-grep-to-moderne-trigrep-code-search-for-agents/moderne-trigrep-execution-time-vs-grep.png)
 
 In an agent-driven development environment, search speed is a foundational efficiency layer.
 

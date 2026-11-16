@@ -6,7 +6,7 @@ published: 2024-09-27
 tags: ["Case Studies", "Code Modernization", "Code Analysis"]
 originalUrl: "https://moderne.ai/blog/transforming-healthcare-software-delivery-medhost-journey-with-moderne"
 publisher: "Moderne"
-hero: "/writing/transforming-healthcare-software-delivery-medhost-journey-with-moderne/medhost-blog.jpg"
+hero: "/samples/transforming-healthcare-software-delivery-medhost-journey-with-moderne/medhost-blog.jpg"
 ---
 
 [MEDHOST](https://www.medhost.com/), a pioneer in healthcare technology, has been at the forefront of providing software solutions tailored to the unique needs of small and medium-sized hospitals, particularly those in rural areas. For over 40 years, MEDHOST has navigated the complexities of the healthcare industry, enabling its customers to better manage hospital operations while meeting the stringent demands of regulatory compliance and patient safety.

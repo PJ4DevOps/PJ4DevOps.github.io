@@ -6,7 +6,7 @@ published: 2026-08-13
 tags: ["Code Modernization", "Case Studies", "OpenRewrite"]
 originalUrl: "https://moderne.ai/blog/sap-large-scale-refactoring-business-capability"
 publisher: "Moderne"
-hero: "/writing/sap-large-scale-refactoring-business-capability/hero.png"
+hero: "/samples/sap-large-scale-refactoring-business-capability/hero.png"
 ---
 
 <aside class="takeaways">
@@ -17,7 +17,7 @@ hero: "/writing/sap-large-scale-refactoring-business-capability/hero.png"
 Harald Aamot, Development Lead for Large Scale Refactoring at SAP, put the Apollo 11 crew portrait on screen at Code Remix Summit and asked the room which of the three astronauts maps to large-scale refactoring.
 
 <figure class="fig-inset">
-<img src="/writing/sap-large-scale-refactoring-business-capability/apollo-11-crew.jpg" alt="The Apollo 11 crew in white pressure suits: Neil Armstrong, Michael Collins holding his helmet, and Buzz Aldrin.">
+<img src="/samples/sap-large-scale-refactoring-business-capability/apollo-11-crew.jpg" alt="The Apollo 11 crew in white pressure suits: Neil Armstrong, Michael Collins holding his helmet, and Buzz Aldrin.">
 <figcaption>The Apollo 11 crew: Armstrong, Collins, Aldrin. Source: <a href="https://images.nasa.gov/details/S69-31740" target="_blank" rel="noopener">NASA</a>.</figcaption>
 </figure>
 

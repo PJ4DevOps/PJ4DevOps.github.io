@@ -6,7 +6,7 @@ published: 2026-02-10
 tags: ["AI/ML", "Product"]
 originalUrl: "https://moderne.ai/blog/changing-ai-code-context-moderne-prethink"
 publisher: "Moderne"
-hero: "/writing/changing-ai-code-context-moderne-prethink/moderne-prethink.jpg"
+hero: "/samples/changing-ai-code-context-moderne-prethink/moderne-prethink.jpg"
 ---
 
 <aside class="takeaways">

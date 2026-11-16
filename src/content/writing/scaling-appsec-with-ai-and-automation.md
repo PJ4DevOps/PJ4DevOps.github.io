@@ -6,7 +6,7 @@ published: 2025-07-07
 tags: ["Code Security", "AI/ML", "Code Modernization"]
 originalUrl: "https://moderne.ai/blog/scaling-appsec-with-ai-and-automation"
 publisher: "Moderne"
-hero: "/writing/scaling-appsec-with-ai-and-automation/crs-appsec-blog.jpg"
+hero: "/samples/scaling-appsec-with-ai-and-automation/crs-appsec-blog.jpg"
 ---
 
 Application security has long been a challenge for development teams, especially without the automation or visibility needed to manage risk at scale. The [numbers](https://www.veracode.com/wp-content/uploads/2025/02/State-of-Software-Security-2025.pdf) tell the story: nearly half of enterprise applications still contain OWASP Top 10 flaws, and over 56% have high-severity vulnerabilities. Even well-known threats like Log4Shell remain unpatched years after disclosure.
@@ -27,7 +27,7 @@ Brian Sletten, in his [session at Code Remix Summit](https://youtu.be/wu31UfOUOg
 
 What’s good enough, though? Not every vulnerability is critical, and not every system needs the same level of attention. He emphasizes building a risk model based on business impact, so teams can focus on what matters and avoid wasting cycles on the rest. He also urges teams to think beyond use cases—what the system should do—and consider abuse cases: what it should never do. These patterns of misuse are essential inputs to validate coverage of your risk model:
 
-![](/writing/scaling-appsec-with-ai-and-automation/ad-4nxd2dzt8sa-lglakr9r6y4cwsb83s3hdxlnicxhd2e9xby-1130a04a.png)
+![](/samples/scaling-appsec-with-ai-and-automation/ad-4nxd2dzt8sa-lglakr9r6y4cwsb83s3hdxlnicxhd2e9xby-1130a04a.png)
 
 And increasingly, Sletten points out, elements of your risk model can be automated, like automating security policies, security testing, and vulnerability remediations. That’s where automated software security tools like OpenRewrite come in.
 
@@ -108,7 +108,7 @@ Clark walks through the [OWASP Top 10 for LLM applications](https://genai.owasp.
 - **Misinformation** – when hallucinated, inaccurate, or misleading results are trusted by downstream systems**‍**
 - **Sensitive information disclosure** – where models expose proprietary or private data in their output
 
-![](/writing/scaling-appsec-with-ai-and-automation/ad-4nxcbhyerojrakbg1auzm-vzi-vn7aebwex5pfxyaihar8x-9f7dc216.png)
+![](/samples/scaling-appsec-with-ai-and-automation/ad-4nxcbhyerojrakbg1auzm-vzi-vn7aebwex5pfxyaihar8x-9f7dc216.png)
 
 These aren’t just speculative. Clark live hacked AI assistants during his session to demonstrate how even widely adopted AI tools can be manipulated in real time. He shows how easily they can be tricked into revealing information, bypassing safeguards, and generating insecure code.
 

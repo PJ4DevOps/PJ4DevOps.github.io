@@ -6,7 +6,7 @@ published: 2024-01-11
 tags: ["Product"]
 originalUrl: "https://moderne.ai/blog/moderne-dx-edition-air-gapped-automated-code-remediation-at-scale"
 publisher: "Moderne"
-hero: "/writing/moderne-dx-edition-air-gapped-automated-code-remediation-at-scale/6684882d8100cbb93aa85337-65a05d497af70f0bab8c2e6d-devteam.jpeg"
+hero: "/samples/moderne-dx-edition-air-gapped-automated-code-remediation-at-scale/6684882d8100cbb93aa85337-65a05d497af70f0bab8c2e6d-devteam.jpeg"
 ---
 
 The Moderne Platform automates code insights and remediation at scale, enabling you to secure and maintain source code with speed and accuracy across your entire codebase. We are now providing this powerful capability in a highly secure, fully on-premises offering called the Moderne DX Edition. This edition delivers a great developer experience for automatically maintaining and migrating codebases with no internal security hurdles.
@@ -15,7 +15,7 @@ You operate the Moderne DX Edition using your own security controls, and all of 
 
 See the architecture of the Moderne DX Edition below and read on for more information about how it can become invaluable to your development teams.
 
-![Figure 1. Moderne DX Edition architecture](/writing/moderne-dx-edition-air-gapped-automated-code-remediation-at-scale/6684882d8100cbb93aa85344-6627d68f009627c5a1b7700a-82ac3ea7.png)
+![Figure 1. Moderne DX Edition architecture](/samples/moderne-dx-edition-air-gapped-automated-code-remediation-at-scale/6684882d8100cbb93aa85344-6627d68f009627c5a1b7700a-82ac3ea7.png)
 *Figure 1. Moderne DX Edition architecture*
 
 ## Moderne DX Central Service: Coordinating across organizations

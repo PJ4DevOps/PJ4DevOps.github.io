@@ -6,7 +6,7 @@ published: 2024-01-05
 tags: ["Case Studies", "Code Modernization"]
 originalUrl: "https://moderne.ai/blog/case-study-improving-developer-productivity-with-code-migration-automation"
 publisher: "Moderne"
-hero: "/writing/case-study-improving-developer-productivity-with-code-migration-automation/6684882950bb969f5708a559-63db012f88516ff6b19d70b6-47dafb7f.jpeg"
+hero: "/samples/case-study-improving-developer-productivity-with-code-migration-automation/6684882950bb969f5708a559-63db012f88516ff6b19d70b6-47dafb7f.jpeg"
 ---
 
 This mid-sized insurance company is a provider of automobile, home, and other insurance products in the United States. One of the company’s divisions was struggling to close code maintenance stories without impacting productivity of the development team. Sound familiar?
@@ -43,7 +43,7 @@ In Q4, the development team managed to close 384 maintenance stories (12 upgrade
 
 They found that with Moderne’s continuous modernization, their codebase was inherently cleaner to work with. What’s more, since developers weren’t context switching to migration projects every month, they could focus and innovate.
 
-![Figure 1. With Moderne, developer productivity soars for maintenance and business stories](/writing/case-study-improving-developer-productivity-with-code-migration-automation/6684882950bb969f5708a590-63db01e38133af5fd08011ef-e0f02b74.png)
+![Figure 1. With Moderne, developer productivity soars for maintenance and business stories](/samples/case-study-improving-developer-productivity-with-code-migration-automation/6684882950bb969f5708a590-63db01e38133af5fd08011ef-e0f02b74.png)
 *Figure 1. With Moderne, developer productivity soars for maintenance and business stories*
 
 A side effect of having automation perform software migrations is that the way the company was classifying and reporting maintenance stories no longer worked. When writing maintenance stories per repository, automated maintenance work would show an outsized level of effort. For example, the Q4 results showed the team closing 384 maintenance stories. This led them to change the way they write stories for automated maintenance.

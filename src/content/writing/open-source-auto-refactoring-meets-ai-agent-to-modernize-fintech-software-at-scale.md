@@ -7,7 +7,7 @@ updated: "October 5, 2026"
 tags: ["Code Modernization", "AI/ML"]
 originalUrl: "https://moderne.ai/blog/open-source-auto-refactoring-meets-ai-agent-to-modernize-fintech-software-at-scale"
 publisher: "Moderne"
-hero: "/writing/open-source-auto-refactoring-meets-ai-agent-to-modernize-fintech-software-at-scale/hero.png"
+hero: "/samples/open-source-auto-refactoring-meets-ai-agent-to-modernize-fintech-software-at-scale/hero.png"
 ---
 
 The software that runs global finance is tightly interdependent, and much of it is decades old. Every change to it has to be secure, compliant, and traceable.
@@ -36,7 +36,7 @@ Recipes are programs that analyze and transform the LST. They’re versioned, te
 
 Coding agents such as Claude Code, Cursor, and GitHub Copilot can now call tools as well as write code. Through Moderne, an agent can pick from a catalog of 10,000+ recipes and run it, instead of working out an upgrade path and editing every file itself. The agent handles intent and planning, and the recipe makes the change.
 
-![Existing code in many repositories becomes code as data (LSTs), which an AI agent works with through OpenRewrite recipes and knowledge graphs on a user&#x27;s behalf](/writing/open-source-auto-refactoring-meets-ai-agent-to-modernize-fintech-software-at-scale/code-as-data-architecture.png)
+![Existing code in many repositories becomes code as data (LSTs), which an AI agent works with through OpenRewrite recipes and knowledge graphs on a user&#x27;s behalf](/samples/open-source-auto-refactoring-meets-ai-agent-to-modernize-fintech-software-at-scale/code-as-data-architecture.png)
 *A coding agent plans the change and calls Moderne’s tools, built from the LSTs, to make it. Developers review the pull requests.*
 
 Moderne also gives agents codebase context they can’t get by reading files one at a time. [Trigrep](https://moderne.ai/moderne-agent-tools/code-search) is type-aware code search over the same LSTs, and [Prethink](https://moderne.ai/moderne-agent-tools/prethink) gives agents pre-resolved context about how a repository is built, so they don’t have to rediscover it every session. (For more on why agents need tools like these, see [AI coding agents need better tools](https://moderne.ai/blog/ai-coding-agents-better-tools).)

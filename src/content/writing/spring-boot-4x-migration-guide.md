@@ -6,7 +6,7 @@ published: 2025-11-20
 tags: ["Code Modernization", "OpenRewrite", "Engineering"]
 originalUrl: "https://moderne.ai/blog/spring-boot-4x-migration-guide"
 publisher: "Moderne"
-hero: "/writing/spring-boot-4x-migration-guide/spring-boot-4-migration2.jpg"
+hero: "/samples/spring-boot-4x-migration-guide/spring-boot-4-migration2.jpg"
 ---
 
 A new day. A new baseline for the Spring ecosystem. Spring Boot 4.0 is here, and the question is simple: where does this leave your services? The 4.x line ushers in another evolution across the Spring ecosystem, and for many teams it feels like the biggest modernization push since the jump from Spring Boot 2.x.
@@ -85,7 +85,7 @@ These ecosystem shifts can present real-world friction, since applications and i
 
 Check out our quick reference for Spring Boot 4.x migration and tech alignment.
 
-![](/writing/spring-boot-4x-migration-guide/screenshot-2025-11-19-at-4-03-06-pm.png)
+![](/samples/spring-boot-4x-migration-guide/screenshot-2025-11-19-at-4-03-06-pm.png)
 
 [](https://info.moderne.ai/spring-boot-4-migration-reference)
 
@@ -120,7 +120,7 @@ A composite migration recipe like “[Migrate to Spring Boot 4.0](https://codege
 
 Each of these steps is independently tested, versioned, and applied consistently across every service. That makes composite recipes both predictable and easy to evolve as new changes arise. And any of the recipes also can be customized, for example, if you have a different best practice than what a recipe prescribes.
 
-![](/writing/spring-boot-4x-migration-guide/bf65e539.png)
+![](/samples/spring-boot-4x-migration-guide/bf65e539.png)
 
 Teams can also use composite recipes selectively, applying only the pieces they need when full migration isn’t feasible yet. For example, without moving immediately to Spring Boot 4.0, a team could:
 
@@ -147,7 +147,7 @@ Refactorings that would normally require careful review become reliable and repe
 
 For Spring Boot 4, deterministic recipes can transform everything from straightforward Maven or Gradle build file dependencies to the shift of dependency structure from monolithic to modular. See the example below of how a recipe handles the change from the single monolithic starter that pulled in more dependencies than required to the Spring Boot 4 fully modular set of starters reflecting only the dependencies actually used:
 
-![](/writing/spring-boot-4x-migration-guide/55491b04.png)
+![](/samples/spring-boot-4x-migration-guide/55491b04.png)
 
 ### Getting to know the OpenRewrite recipe marketplace
 
@@ -176,7 +176,7 @@ Moderne’s [DevCenter](https://moderne.ai/blog/new-moderne-devcenter) gives tea
 
 Instead of chasing spreadsheets or status meetings, Moderne provides real-time visibility into progress, blockers, and remaining work. Platform teams can coordinate migration waves, while application teams can focus only on their relevant services.
 
-![](/writing/spring-boot-4x-migration-guide/image-46.png)
+![](/samples/spring-boot-4x-migration-guide/image-46.png)
 
 ### Recipe Builder: Your organizational migration playbook
 
@@ -190,7 +190,7 @@ For complex migrations like Spring Boot 4.x, Recipe Builder helps teams:
 - Iterate safely before rolling out changes across the portfolio
 - Publish playbooks for application teams to run self-serve—establishing a repeatable pattern: define once, run everywhere
 
-![](/writing/spring-boot-4x-migration-guide/58e827c2.png)
+![](/samples/spring-boot-4x-migration-guide/58e827c2.png)
 
 ### Managing pull requests at scale (pull or push workflows)
 
