@@ -24,7 +24,9 @@ const span = (roles: Role[]) => `${roles.at(-1)!.start.slice(0, 4)} – ${roles[
       <div class="section-head"><h2>What I do</h2></div>
       <dl class="focus">
         {resume.focus.map(f => (
-          <div><dt>{f.label}</dt><dd>{f.text}</dd></div>
+          <div><dt>{f.label}</dt><dd>{f.link && f.text.includes(f.link.text)
+            ? <>{f.text.split(f.link.text)[0]}<a href={f.link.href}>{f.link.text}</a>{f.text.split(f.link.text).slice(1).join(f.link.text)}</>
+            : f.text}</dd></div>
         ))}
       </dl>
     </section>

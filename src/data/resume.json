@@ -16,7 +16,8 @@
     },
     {
       "label": "AI, hands-on",
-      "text": "I built patriciajohnson.me with Claude Code, from first sketch to live domain: design, copy, photo privacy, and launch."
+      "text": "Using AI to support research, messaging, content, design, and analysis. I built this site with Claude Code.",
+      "link": { "text": "built this site", "href": "/musings/barren-plain-a-pollinator-and-ai/" }
     },
     {
       "label": "Technology areas",
